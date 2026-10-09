@@ -23,7 +23,6 @@ const url = href(locale, paths.plugin(product.slug));
   <Heading><a href={url}>{product.name}</a></Heading>
   <div class="meta-row">
     <span class="badge">{ui.kind[product.kind]}</span>
-    {product.own && <span class="badge own">{ui.table.ours}</span>}
   </div>
   <p>{text ?? prose.summary}</p>
   <p class="small muted">
