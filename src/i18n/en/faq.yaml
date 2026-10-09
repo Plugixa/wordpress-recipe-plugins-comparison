@@ -1,0 +1,17 @@
+items:
+  - q: What is the best WordPress recipe plugin?
+    a: For most food blogs, WP Recipe Maker. It has the largest user base, the highest rating on wordpress.org, and a free version with JSON-LD schema and a template editor. Other plugins fit better in specific cases, such as Create for free nutrition calculation, Recipe Card Blocks for several sites, and WP Delicious or Plugixa Recipe for a recipe directory.
+  - q: Which recipe plugin is best if I do not want to pay?
+    a: It depends on the feature you need most. Create gives automatic nutrition calculation free. WP Recipe Maker gives a template editor and Guided Recipes markup free. Recipe Card Blocks gives cook mode free. Plugixa Recipe gives visitor submissions and reviews free, but keeps JSON-LD for its paid version.
+  - q: Do I need a recipe plugin for Google to show my recipes?
+    a: Google reads Recipe structured data to show ratings, cooking time and images in search results. A recipe plugin writes that data for you. Google recommends the JSON-LD format, which we confirmed as free in five of the seven plugins here.
+  - q: What is the difference between a recipe card plugin and a recipe site plugin?
+    a: A card plugin adds a recipe card inside a blog post, under your own writing. A recipe site plugin gives each recipe its own page and builds listings, categories and search around them. WP Recipe Maker, Tasty Recipes, Create and Recipe Card Blocks are card plugins. WP Delicious, Cooked and Plugixa Recipe lean towards recipe sites.
+  - q: Can I switch recipe plugins without losing my recipes?
+    a: Usually, if the new plugin has an importer for the old one. WP Recipe Maker imports from more than 20 plugins; Tasty Recipes and Create import from 11 each. Run the import on a staging copy first and check that ratings and images came across.
+  - q: Which recipe plugins calculate nutrition facts automatically?
+    a: Create does it free. WP Recipe Maker, Recipe Card Blocks and Cooked do it in a paid tier. Tasty Recipes connects to Nutrifox, a separate subscription. Plugixa Recipe has no food-database calculator.
+  - q: Who runs this comparison?
+    a: Plugixa, the company that makes Plugixa Recipe. That is a conflict of interest. To limit it, every value links to its source, each plugin page lists weaknesses as well as strengths, and our own plugin is ranked first only where the data supports it.
+  - q: How often is the data updated?
+    a: Install counts, ratings and version numbers are read from the wordpress.org API every week. Features and prices are checked by hand, and each plugin page shows the date of the last check.

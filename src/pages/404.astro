@@ -1,0 +1,15 @@
+---
+import Base from "../layouts/Base.astro";
+import { content, href, DEFAULT_LOCALE } from "../lib/i18n";
+import { paths } from "../lib/pages";
+
+const locale = DEFAULT_LOCALE;
+const ui = content(locale, "ui");
+const meta = { path: "/404/", title: ui.notfound.title, description: ui.notfound.text, h1: ui.notfound.title, ogKey: "home" };
+---
+
+<Base locale={locale} meta={meta} noindex>
+  <h1>{ui.notfound.title}</h1>
+  <p>{ui.notfound.text}</p>
+  <p><a class="btn" href={href(locale, paths.home())}>{ui.notfound.back}</a></p>
+</Base>

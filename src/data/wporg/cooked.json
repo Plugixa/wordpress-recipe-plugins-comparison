@@ -1,0 +1,16 @@
+{
+  "slug": "cooked",
+  "api_url": "https://api.wordpress.org/plugins/info/1.2/?action=plugin_information&request[slug]=cooked",
+  "fetched_at": "2026-10-09",
+  "listed": true,
+  "name": "Cooked &#8211; Recipe Management",
+  "version": "1.16.2",
+  "active_installs": 3000,
+  "rating": 3.89,
+  "num_ratings": 90,
+  "last_updated": "2026-10-05",
+  "added": "2013-11-03",
+  "requires_wp": "6.8",
+  "requires_php": "7.4",
+  "tested_up_to": "7.1.3"
+}

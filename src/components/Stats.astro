@@ -1,0 +1,44 @@
+---
+import { content, fmt, formatDate, type Locale } from "../lib/i18n";
+import type { Product } from "../lib/data";
+import { installsLabel, ratingLabel } from "../lib/cells";
+
+interface Props {
+  locale: Locale;
+  product: Product;
+}
+
+const { locale, product } = Astro.props;
+const ui = content(locale, "ui");
+const stats = product.wporg;
+---
+
+<dl class="facts">
+  <div><dt>{ui.stats.type}</dt><dd>{ui.kind[product.kind]}</dd></div>
+  <div><dt>{ui.stats.vendor}</dt><dd>{product.vendor}</dd></div>
+  {
+    stats && (
+      <>
+        <div><dt>{ui.stats.installs}</dt><dd>{installsLabel(locale, product)}</dd></div>
+        <div><dt>{ui.stats.rating}</dt><dd>{ratingLabel(locale, product)}</dd></div>
+        <div><dt>{ui.stats.version}</dt><dd>{stats.version}</dd></div>
+        <div><dt>{ui.stats.updated}</dt><dd>{formatDate(stats.last_updated, locale)}</dd></div>
+        <div><dt>{ui.stats.listed_since}</dt><dd>{formatDate(stats.added, locale)}</dd></div>
+        {stats.requires_wp && stats.requires_php && (
+          <div>
+            <dt>{ui.stats.requires}</dt>
+            <dd>{fmt(ui.stats.requires_value, { wp: stats.requires_wp, php: stats.requires_php })}</dd>
+          </div>
+        )}
+      </>
+    )
+  }
+</dl>
+{
+  stats && (
+    <p class="small muted">
+      {fmt(ui.stats.note, { date: formatDate(stats.fetched_at, locale) })}
+      <a href={`https://wordpress.org/plugins/${stats.slug}/`} rel="noopener nofollow">{ui.plugin.wporg}</a>
+    </p>
+  )
+}

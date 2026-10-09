@@ -1,0 +1,46 @@
+# Language-neutral page structure. Prose for each entry lives in src/i18n/{locale}/.
+
+# "X vs Y" pages. Key in compare.yaml is "{a}-vs-{b}".
+compare:
+  - { a: plugixa-recipe, b: wp-recipe-maker }
+  - { a: plugixa-recipe, b: recipe-card-blocks }
+  - { a: plugixa-recipe, b: create }
+  - { a: plugixa-recipe, b: wp-delicious }
+  - { a: plugixa-recipe, b: cooked }
+  - { a: plugixa-recipe, b: tasty-recipes }
+  - { a: wp-recipe-maker, b: tasty-recipes }
+  - { a: wp-delicious, b: wp-recipe-maker }
+
+# "Alternatives to X" pages. `target` is a product slug, or a legacy plugin with `name`.
+alternatives:
+  - target: wp-recipe-maker
+    picks: [recipe-card-blocks, create, tasty-recipes, wp-delicious, plugixa-recipe]
+  - target: tasty-recipes
+    picks: [wp-recipe-maker, create, recipe-card-blocks, plugixa-recipe]
+  - target: create
+    picks: [wp-recipe-maker, tasty-recipes, recipe-card-blocks, plugixa-recipe]
+  - target: zip-recipes
+    name: Zip Recipes
+    picks: [wp-recipe-maker, create, tasty-recipes, plugixa-recipe]
+
+# "Best of" guides, picks in ranked order.
+guides:
+  - slug: best-wordpress-recipe-plugins
+    picks: [wp-recipe-maker, recipe-card-blocks, create, wp-delicious, plugixa-recipe, tasty-recipes, cooked]
+  - slug: best-free-recipe-plugins
+    picks: [create, wp-recipe-maker, plugixa-recipe, recipe-card-blocks, cooked, wp-delicious]
+  - slug: recipe-directory-plugins
+    picks: [plugixa-recipe, wp-delicious, cooked, wp-recipe-maker]
+  - slug: recipe-plugins-with-nutrition-calculator
+    picks: [create, cooked, recipe-card-blocks, wp-recipe-maker, tasty-recipes, plugixa-recipe]
+  - slug: recipe-plugins-for-elementor
+    picks: [wp-recipe-maker, recipe-card-blocks, tasty-recipes, plugixa-recipe, wp-delicious]
+
+# Plugins that are no longer a safe choice. reason: author | guideline | security | at_risk
+legacy:
+  - { name: Zip Recipes, slug: zip-recipes, reason: at_risk, date: "2026-10-09", source: "https://wordpress.org/plugins/zip-recipes/" }
+  - { name: Blossom Recipe Maker, slug: blossom-recipe-maker, reason: author, date: "2024-07-06", source: "https://wordpress.org/plugins/blossom-recipe-maker/" }
+  - { name: Recipes by Simmer, slug: simmer, reason: guideline, date: "2023-07-26", source: "https://wordpress.org/plugins/simmer/" }
+  - { name: EasyRecipe, slug: easyrecipe, reason: security, date: "2023-10-21", source: "https://wordpress.org/plugins/easyrecipe/" }
+  - { name: WP Ultimate Recipe, slug: wp-ultimate-recipe, reason: author, date: "2021-05-31", source: "https://wordpress.org/plugins/wp-ultimate-recipe/" }
+  - { name: Meal Planner Pro Recipes, slug: meal-planner-pro, reason: security, date: "2020-07-16", source: "https://wordpress.org/plugins/meal-planner-pro/" }

@@ -1,0 +1,51 @@
+---
+import Base from "../../layouts/Base.astro";
+import { LOCALES, content, localeParam, type Locale } from "../../lib/i18n";
+import { getAreas } from "../../lib/data";
+import { methodologyMeta, paths, REPO_URL } from "../../lib/pages";
+
+export function getStaticPaths() {
+  return LOCALES.map((locale) => ({ params: { locale: localeParam(locale) }, props: { locale } }));
+}
+
+const { locale } = Astro.props as { locale: Locale };
+const ui = content(locale, "ui");
+const labels = content(locale, "features");
+const sections = content(locale, "methodology").sections as { id: string; h: string; p: string[] }[];
+const meta = methodologyMeta(locale);
+const crumbs = [{ name: ui.breadcrumb.home, path: paths.home() }, { name: meta.h1 }];
+---
+
+<Base locale={locale} meta={meta} crumbs={crumbs}>
+  <article class="prose">
+    <h1>{meta.h1}</h1>
+    {
+      sections.map((s) => (
+        <section id={s.id}>
+          <h2>{s.h}</h2>
+          {s.p.map((p) => <p>{p}</p>)}
+          {s.id === "corrections" && <p><a href={`${REPO_URL}/issues/new`} rel="noopener">{ui.footer.correction}</a></p>}
+        </section>
+      ))
+    }
+
+    <section id="definitions">
+      <h2>{ui.methodology.features_title}</h2>
+      {
+        getAreas().map((area) => (
+          <>
+            <h3>{labels.areas[area.id]}</h3>
+            <dl>
+              {area.features.map((f) => (
+                <>
+                  <dt><strong>{labels.features[f.id].label}</strong></dt>
+                  <dd>{labels.features[f.id].def}</dd>
+                </>
+              ))}
+            </dl>
+          </>
+        ))
+      }
+    </section>
+  </article>
+</Base>

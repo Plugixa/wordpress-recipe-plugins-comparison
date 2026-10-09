@@ -1,0 +1,7 @@
+items:
+  - { file: grid.webp, alt: "Rezeptübersicht im Raster-Layout" }
+  - { file: recipe-page.webp, alt: "Rezeptseite mit Zeiten, Bewertung, Drucken, Speichern und Teilen" }
+  - { file: ingredients.webp, alt: "Gruppierte Zutaten mit Portionsrechner und nummerierte Schritte" }
+  - { file: archives.webp, alt: "Archiv nach Kategorie und Küche mit Filtern" }
+  - { file: recipe-manager.webp, alt: "Rezeptverwaltung im WordPress-Adminbereich" }
+  - { file: view-editor.webp, alt: "Visueller Editor für ein Listen-Design" }

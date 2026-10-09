@@ -1,0 +1,55 @@
+slug: wp-delicious
+name: WP Delicious
+vendor: WP Delicious
+own: false
+kind: database
+order: 5
+wporg_slug: delicious-recipes
+homepage: https://wpdelicious.com/
+verified_at: 2026-10-09
+version_checked: "1.10.10"
+sources:
+  wporg: { url: "https://wordpress.org/plugins/delicious-recipes/", method: docs }
+  features: { url: "https://wpdelicious.com/features/", method: docs }
+  pricing: { url: "https://wpdelicious.com/pricing/", method: docs }
+pricing:
+  source: pricing
+  currency: USD
+  free: true
+  lifetime: true
+  refund: days_14
+  tiers:
+    - { name: Pro, price: 59, regular: 69, period: year, sites: "1" }
+    - { name: Pro, price: 199, regular: 249, period: lifetime, sites: "1" }
+    - { name: All Access Bundle, price: 199, regular: 413, period: year, sites: "1" }
+features:
+  schema.jsonld: { value: yes, tier: free, src: wporg }
+  schema.guided: { value: unverified }
+  editors.gutenberg: { value: yes, tier: free, src: wporg, note: true }
+  editors.classic: { value: unverified }
+  editors.elementor: { value: partial, tier: free, src: wporg, note: true }
+  editors.shortcode: { value: partial, tier: free, src: wporg, note: true }
+  editors.card_in_post: { value: yes, tier: free, src: wporg, note: true }
+  editors.own_pages: { value: yes, tier: free, src: wporg }
+  design.templates: { text: true, src: wporg }
+  design.template_editor: { value: unverified }
+  ingredients.groups: { value: unverified }
+  ingredients.servings: { value: unverified }
+  ingredients.unit_conversion: { value: unverified }
+  ingredients.links: { value: unverified }
+  ingredients.equipment: { value: yes, tier: paid, tier_name: Pro, src: features }
+  instructions.step_media: { value: unverified }
+  instructions.timers: { value: yes, tier: paid, tier_name: Pro, src: features }
+  nutrition.label: { value: yes, tier: free, src: wporg }
+  nutrition.auto: { value: unverified }
+  readers.ratings: { value: yes, tier: free, src: wporg }
+  readers.print: { value: yes, tier: free, src: wporg }
+  readers.jump: { value: yes, tier: free, src: wporg }
+  readers.cook_mode: { value: partial, tier: paid, tier_name: Pro, src: features, note: true }
+  readers.favorites: { value: yes, tier: free, src: wporg }
+  readers.planner: { value: partial, tier: addon, src: features, note: true }
+  site.index_search: { value: yes, tier: free, src: wporg }
+  site.submissions: { value: yes, tier: paid, tier_name: Pro, src: features }
+  site.multilingual: { value: unverified }
+  extras.importers: { value: unverified }
+  extras.ai: { value: yes, tier: addon, src: features }

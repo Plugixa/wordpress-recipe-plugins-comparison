@@ -1,0 +1,7 @@
+items:
+  - { file: grid.webp, alt: "Elenco di ricette nel layout a griglia" }
+  - { file: recipe-page.webp, alt: "Pagina della ricetta con tempi, valutazione, stampa, salvataggio e condivisione" }
+  - { file: ingredients.webp, alt: "Ingredienti raggruppati con regolazione delle porzioni e passaggi numerati" }
+  - { file: archives.webp, alt: "Archivio per categoria e cucina con filtri" }
+  - { file: recipe-manager.webp, alt: "Schermata di gestione delle ricette nell'amministrazione di WordPress" }
+  - { file: view-editor.webp, alt: "Editor visuale di un design di elenco" }

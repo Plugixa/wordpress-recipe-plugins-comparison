@@ -1,0 +1,105 @@
+---
+import Base from "../../../layouts/Base.astro";
+import ComparisonTable from "../../../components/ComparisonTable.astro";
+import { LOCALES, content, fmt, href, localeParam, formatDate, type Locale } from "../../../lib/i18n";
+import { diffStats, getFeatures, getPagesConfig, getProduct, type Product } from "../../../lib/data";
+import { fromPrice, installsLabel, ratingLabel } from "../../../lib/cells";
+import { compareMeta, paths } from "../../../lib/pages";
+import { articleLd, itemListLd } from "../../../lib/seo";
+
+export function getStaticPaths() {
+  return LOCALES.flatMap((locale) =>
+    getPagesConfig().compare.map((c) => ({
+      params: { locale: localeParam(locale), pair: `${c.a}-vs-${c.b}` },
+      props: { locale, a: getProduct(c.a), b: getProduct(c.b) },
+    })),
+  );
+}
+
+const { locale, a, b } = Astro.props as { locale: Locale; a: Product; b: Product };
+const ui = content(locale, "ui");
+const prose = content(locale, "compare")[`${a.slug}-vs-${b.slug}`];
+if (!prose) throw new Error(`No compare text for ${a.slug}-vs-${b.slug}`);
+const meta = compareMeta(locale, a, b);
+const pair = [a, b];
+const modified = [a.verified_at, b.verified_at].sort().at(-1)!;
+const others = getPagesConfig()
+  .compare.filter((c) => !(c.a === a.slug && c.b === b.slug))
+  .map((c) => compareMeta(locale, getProduct(c.a), getProduct(c.b)));
+
+const glance = [
+  { label: ui.stats.type, value: (p: Product) => ui.kind[p.kind] },
+  { label: ui.stats.installs, value: (p: Product) => installsLabel(locale, p) ?? "–" },
+  { label: ui.stats.rating, value: (p: Product) => ratingLabel(locale, p) ?? "–" },
+  { label: ui.stats.updated, value: (p: Product) => (p.wporg ? formatDate(p.wporg.last_updated, locale) : "–") },
+  { label: ui.pricing.free, value: (p: Product) => (p.pricing.free ? ui.values.yes : ui.values.no) },
+  { label: ui.pricing.price, value: (p: Product) => fromPrice(locale, p) },
+  { label: ui.pricing.lifetime_option, value: (p: Product) => (p.pricing.lifetime ? ui.pricing.available : ui.pricing.not_listed) },
+  { label: ui.pricing.refund, value: (p: Product) => ui.pricing[`refund_${p.pricing.refund}`] },
+];
+
+const crumbs = [{ name: ui.breadcrumb.home, path: paths.home() }, { name: ui.breadcrumb.compare, path: paths.home() }, { name: meta.h1 }];
+const jsonld = [itemListLd(locale, meta.h1, pair), articleLd(locale, meta.path, meta.title, meta.description, modified)];
+---
+
+<Base locale={locale} meta={meta} crumbs={crumbs} jsonld={jsonld} modified={modified}>
+  <article>
+    <h1>{meta.h1}</h1>
+    <div class="prose">
+      {prose.intro.map((p: string, i: number) => <p class:list={{ lead: i === 0 }}>{p}</p>)}
+      <p class="muted">{fmt(ui.compare.stats, { features: getFeatures().length, ...diffStats(a, b) })}</p>
+    </div>
+
+    <section aria-labelledby="verdict-h">
+      <h2 id="verdict-h">{ui.compare.verdict}</h2>
+      <div class="callout"><p>{prose.verdict}</p></div>
+      <div class="two-col">
+        <div class:list={["panel", { own: a.own }]}>
+          <h3>{fmt(ui.compare.choose, { name: a.name })}</h3>
+          <ul>{prose.choose_a.map((t: string) => <li>{t}</li>)}</ul>
+        </div>
+        <div class:list={["panel", { own: b.own }]}>
+          <h3>{fmt(ui.compare.choose, { name: b.name })}</h3>
+          <ul>{prose.choose_b.map((t: string) => <li>{t}</li>)}</ul>
+        </div>
+      </div>
+    </section>
+
+    <section aria-labelledby="glance-h">
+      <h2 id="glance-h">{ui.compare.at_a_glance}</h2>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <td></td>
+              {pair.map((p) => <th scope="col"><a href={href(locale, paths.plugin(p.slug))}>{p.name}</a></th>)}
+            </tr>
+          </thead>
+          <tbody>
+            {
+              glance.map((row) => (
+                <tr>
+                  <th scope="row">{row.label}</th>
+                  {pair.map((p) => <td>{row.value(p)}</td>)}
+                </tr>
+              ))
+            }
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section aria-labelledby="table-h">
+      <h2 id="table-h">{ui.compare.table_title}</h2>
+      <ComparisonTable locale={locale} products={pair} pickProducts={false} />
+    </section>
+
+    <section aria-labelledby="more-h">
+      <h2 id="more-h">{ui.compare.more}</h2>
+      <ul class="link-list">
+        {pair.map((p) => <li><a href={href(locale, paths.plugin(p.slug))}>{fmt(ui.plugin.h1, { name: p.name })}</a></li>)}
+        {others.map((m) => <li><a href={href(locale, m.path)}>{m.h1}</a></li>)}
+      </ul>
+    </section>
+  </article>
+</Base>

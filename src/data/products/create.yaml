@@ -1,0 +1,52 @@
+slug: create
+name: Create
+vendor: Create Studio
+own: false
+kind: card
+order: 4
+wporg_slug: mediavine-create
+homepage: https://create.studio/
+verified_at: 2026-10-09
+version_checked: "2.7.0"
+sources:
+  wporg: { url: "https://wordpress.org/plugins/mediavine-create/", method: docs }
+  site: { url: "https://create.studio/", method: docs }
+pricing:
+  source: site
+  currency: USD
+  free: true
+  lifetime: false
+  refund: unknown
+  tiers:
+    - { name: Create Pro, price: 150, period: year, sites: "1" }
+features:
+  schema.jsonld: { value: yes, tier: free, src: wporg }
+  schema.guided: { value: unverified }
+  editors.gutenberg: { value: yes, tier: free, src: wporg }
+  editors.classic: { value: yes, tier: free, src: wporg }
+  editors.elementor: { value: unverified }
+  editors.shortcode: { value: yes, tier: free, src: wporg }
+  editors.card_in_post: { value: yes, tier: free, src: wporg }
+  editors.own_pages: { value: unverified }
+  design.templates: { text: true, src: site }
+  design.template_editor: { value: partial, tier: paid, tier_name: Create Pro, src: site, note: true }
+  ingredients.groups: { value: unverified }
+  ingredients.servings: { value: yes, tier: paid, tier_name: Create Pro, src: site }
+  ingredients.unit_conversion: { value: yes, tier: paid, tier_name: Create Pro, src: site }
+  ingredients.links: { value: unverified }
+  ingredients.equipment: { value: unverified }
+  instructions.step_media: { value: unverified }
+  instructions.timers: { value: yes, tier: paid, tier_name: Create Pro, src: site, note: true }
+  nutrition.label: { value: yes, tier: free, src: wporg }
+  nutrition.auto: { value: yes, tier: free, src: wporg, note: true }
+  readers.ratings: { value: yes, tier: free, src: wporg }
+  readers.print: { value: unverified }
+  readers.jump: { value: unverified }
+  readers.cook_mode: { value: yes, tier: paid, tier_name: Create Pro, src: site, note: true }
+  readers.favorites: { value: unverified }
+  readers.planner: { value: unverified }
+  site.index_search: { value: partial, tier: free, src: wporg, note: true }
+  site.submissions: { value: unverified }
+  site.multilingual: { value: unverified }
+  extras.importers: { text: true, src: wporg }
+  extras.ai: { value: unverified }

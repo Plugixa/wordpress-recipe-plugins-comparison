@@ -1,0 +1,78 @@
+---
+import Base from "../../../layouts/Base.astro";
+import ComparisonTable from "../../../components/ComparisonTable.astro";
+import ProductCard from "../../../components/ProductCard.astro";
+import { LOCALES, content, fmt, href, localeParam, type Locale } from "../../../lib/i18n";
+import { getPagesConfig, getProduct, lastChecked } from "../../../lib/data";
+import { alternativesMeta, alternativesTarget, comparePathFor, paths } from "../../../lib/pages";
+import { articleLd, itemListLd } from "../../../lib/seo";
+
+export function getStaticPaths() {
+  return LOCALES.flatMap((locale) =>
+    getPagesConfig().alternatives.map((entry) => ({
+      params: { locale: localeParam(locale), target: entry.target },
+      props: { locale, target: entry.target, picks: entry.picks },
+    })),
+  );
+}
+
+const { locale, target, picks } = Astro.props as { locale: Locale; target: string; picks: string[] };
+const ui = content(locale, "ui");
+const prose = content(locale, "alternatives")[target];
+const meta = alternativesMeta(locale, target);
+const { name, product: targetProduct } = alternativesTarget(target);
+const products = picks.map(getProduct);
+const tableProducts = targetProduct ? [targetProduct, ...products] : products;
+const modified = lastChecked(tableProducts);
+
+const crumbs = [{ name: ui.breadcrumb.home, path: paths.home() }, { name: ui.breadcrumb.alternatives, path: paths.home() }, { name: meta.h1 }];
+const jsonld = [itemListLd(locale, meta.h1, products), articleLd(locale, meta.path, meta.title, meta.description, modified)];
+---
+
+<Base locale={locale} meta={meta} crumbs={crumbs} jsonld={jsonld} modified={modified} wide>
+  <article>
+    <h1>{meta.h1}</h1>
+    <p class="lead">{prose.intro}</p>
+
+    <section aria-labelledby="why-h" class="prose">
+      <h2 id="why-h">{ui.alternatives.why}</h2>
+      <ul>{prose.why.map((w: string) => <li>{w}</li>)}</ul>
+      {
+        targetProduct && (
+          <p><a href={href(locale, paths.plugin(targetProduct.slug))}>{fmt(ui.alternatives.read_review, { name })}</a></p>
+        )
+      }
+    </section>
+
+    <section aria-labelledby="picks-h">
+      <h2 id="picks-h">{ui.alternatives.picks}</h2>
+      <ol class="ranked">
+        {
+          products.map((p) => {
+            const vs = targetProduct && comparePathFor(p.slug, targetProduct.slug);
+            return (
+              <li>
+                <ProductCard locale={locale} product={p} text={prose.picks[p.slug]} />
+                {vs && (
+                  <p class="small" style="margin:.5rem 0 0">
+                    <a href={href(locale, vs)}>{fmt(ui.alternatives.compare_with, { a: p.name, b: name })}</a>
+                  </p>
+                )}
+              </li>
+            );
+          })
+        }
+      </ol>
+    </section>
+
+    <section aria-labelledby="migrate-h" class="prose">
+      <h2 id="migrate-h">{ui.alternatives.migrate}</h2>
+      <p>{prose.migrate}</p>
+    </section>
+
+    <section aria-labelledby="table-h">
+      <h2 id="table-h">{ui.guide.table_title}</h2>
+      <ComparisonTable locale={locale} products={tableProducts} />
+    </section>
+  </article>
+</Base>

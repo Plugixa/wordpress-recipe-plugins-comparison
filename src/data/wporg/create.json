@@ -1,0 +1,16 @@
+{
+  "slug": "mediavine-create",
+  "api_url": "https://api.wordpress.org/plugins/info/1.2/?action=plugin_information&request[slug]=mediavine-create",
+  "fetched_at": "2026-10-09",
+  "listed": true,
+  "name": "Create",
+  "version": "2.7.0",
+  "active_installs": 6000,
+  "rating": 4.32,
+  "num_ratings": 25,
+  "last_updated": "2026-10-07",
+  "added": "2018-09-26",
+  "requires_wp": "6.5",
+  "requires_php": "7.4",
+  "tested_up_to": "7.1.3"
+}

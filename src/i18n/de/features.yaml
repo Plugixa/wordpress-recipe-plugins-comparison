@@ -1,0 +1,101 @@
+areas:
+  schema: Strukturierte Daten
+  editors: Editoren und Platzierung
+  design: Design
+  ingredients: Zutaten
+  instructions: Zubereitung
+  nutrition: Nährwerte
+  readers: Funktionen für Leser
+  site: Aufbau einer Rezept-Website
+  extras: Migration und Extras
+features:
+  schema.jsonld:
+    label: Rezept-Schema (JSON-LD)
+    def: Gibt strukturierte Daten vom Typ Recipe als JSON-LD aus, dem Format, das Google für Rezept-Rich-Suchergebnisse empfiehlt.
+  schema.guided:
+    label: Guided-Recipes-Markup
+    def: Zeichnet jeden Schritt aus, sodass das Rezept für die Schritt-für-Schritt-Anleitung auf Smart Displays und im Google Assistant infrage kommt.
+  editors.gutenberg:
+    label: Block-Editor (Gutenberg)
+    def: Bringt einen eigenen Block mit, um ein Rezept im Block-Editor von WordPress einzufügen.
+  editors.classic:
+    label: Classic Editor
+    def: Rezepte lassen sich im Classic Editor in Beiträge einfügen.
+  editors.elementor:
+    label: Elementor
+    def: Bringt ein eigenes Elementor-Widget mit.
+  editors.shortcode:
+    label: Shortcode
+    def: Ein Shortcode zeigt ein Rezept oder eine Rezeptliste überall dort an, wo Shortcodes ausgeführt werden.
+  editors.card_in_post:
+    label: Rezeptkarte im Beitrag
+    def: Eine vollständige Rezeptkarte lässt sich in einen normalen Blogbeitrag einfügen, unter Ihrem eigenen Text.
+  editors.own_pages:
+    label: Eigenständige Rezeptseiten
+    def: Jedes Rezept erhält eine eigene Seite und URL, getrennt von den Blogbeiträgen.
+  design.templates:
+    label: Templates und Layouts
+    def: Wie viele Rezept-Designs das Plugin mitbringt.
+  design.template_editor:
+    label: Template-Editor
+    def: Ein visuelles Werkzeug, mit dem sich der Aufbau eines Rezept-Templates ändern lässt, nicht nur die Farben.
+  ingredients.groups:
+    label: Zutatengruppen
+    def: Zutaten lassen sich unter Zwischenüberschriften wie „Für die Sauce“ aufteilen.
+  ingredients.servings:
+    label: Anpassbare Portionen
+    def: Leser ändern die Zahl der Portionen, und die Mengen werden neu berechnet.
+  ingredients.unit_conversion:
+    label: Einheitenumrechnung
+    def: Leser wechseln im Rezept zwischen US-amerikanischen und metrischen Einheiten.
+  ingredients.links:
+    label: Zutatenlinks
+    def: Zutaten können nach außen verlinken, zum Beispiel auf ein Affiliate-Produkt.
+  ingredients.equipment:
+    label: Liste der Küchenutensilien
+    def: Ein Abschnitt, der den Lesern die Utensilien anzeigt, die für ein Rezept nötig sind.
+  instructions.step_media:
+    label: Fotos zu einzelnen Schritten
+    def: Einem einzelnen Schritt lässt sich ein Foto oder Video zuordnen.
+  instructions.timers:
+    label: Timer
+    def: Zeitangaben in der Zubereitung werden zu Timern, die der Leser starten kann.
+  nutrition.label:
+    label: Nährwerttabelle
+    def: Nährwerte werden von Hand eingetragen und als Nährwerttabelle angezeigt.
+  nutrition.auto:
+    label: Automatische Nährwertberechnung
+    def: Die Nährwerte werden mithilfe einer Lebensmitteldatenbank aus der Zutatenliste berechnet.
+  readers.ratings:
+    label: Sternebewertungen
+    def: Leser können ein Rezept mit bis zu fünf Sternen bewerten.
+  readers.print:
+    label: Druckansicht
+    def: Ein Druck-Button öffnet eine aufgeräumte, druckbare Fassung des Rezepts.
+  readers.jump:
+    label: Zum Rezept springen
+    def: Ein Button am Anfang eines Beitrags scrollt direkt zur Rezeptkarte.
+  readers.cook_mode:
+    label: Kochmodus
+    def: Ein Schalter verhindert, dass sich der Bildschirm des Lesers beim Kochen abschaltet.
+  readers.favorites:
+    label: Gespeicherte Rezepte
+    def: Leser können Rezepte speichern und später wiederfinden.
+  readers.planner:
+    label: Essensplaner und Einkaufsliste
+    def: Leser stellen aus den Rezepten der Website einen Essensplan oder eine Einkaufsliste zusammen.
+  site.index_search:
+    label: Rezeptindex und Suche
+    def: Übersichtsseiten, auf denen Besucher alle Rezepte durchstöbern, filtern und durchsuchen.
+  site.submissions:
+    label: Von Besuchern eingereichte Rezepte
+    def: Besucher reichen Rezepte über ein Formular auf der Website ein, und Sie moderieren sie.
+  site.multilingual:
+    label: Unterstützung für WPML oder Polylang
+    def: Erklärt die Kompatibilität mit einem Mehrsprachigkeits-Plugin, sodass sich Rezepte übersetzen lassen.
+  extras.importers:
+    label: Importer
+    def: Aus welchen anderen Rezept-Plugins das Plugin Rezepte importieren kann.
+  extras.ai:
+    label: Rezeptentwürfe per KI
+    def: Erstellt mit einem KI-Modell einen Rezeptentwurf.

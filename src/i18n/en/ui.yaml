@@ -1,0 +1,176 @@
+site:
+  name: WordPress Recipe Plugins Compared
+  short: Recipe Plugins Compared
+  tagline: Sourced, dated facts on WordPress recipe plugins.
+nav:
+  home: Comparison
+  plugins: Plugins
+  compare: Versus
+  guides: Best of
+  methodology: Methodology
+  language: Language
+  theme: Switch light or dark theme
+  skip: Skip to content
+disclosure:
+  text: This comparison is maintained by Plugixa, the makers of Plugixa Recipe.
+  link: How we handle that
+footer:
+  checked: "Data last checked {date}."
+  license: "Data and text: CC BY 4.0. Code: MIT."
+  correction: Found a wrong value? Open a correction.
+  trademarks: Plugin names are trademarks of their owners. This site is not affiliated with them.
+breadcrumb:
+  home: Home
+  plugins: Plugins
+  compare: Versus
+  alternatives: Alternatives
+  guides: Best of
+values:
+  "yes": "Yes"
+  partial: Partial
+  "no": "No"
+  unverified: Not checked
+  free: Free
+  paid: "Paid: {tier}"
+  addon: Paid add-on
+  source: Source
+legend:
+  title: How to read the table
+  "yes": The plugin does this.
+  partial: It does part of this; the note says what is missing.
+  "no": The plugin does not do this.
+  unverified: We could not confirm it from the vendor's own pages, so we do not claim either way.
+table:
+  caption: "Feature comparison of {n} WordPress recipe plugins"
+  feature: Feature
+  products: Plugins
+  area: Area
+  all_areas: All areas
+  only_diff: Only where plugins differ
+  hide_unchecked: Hide rows nobody is checked on
+  reset: Reset
+  status: "{rows} of {total} features, {cols} of {all} plugins"
+  scroll_hint: Scroll sideways to see more plugins, or untick some above.
+  checked: "{n} of {total} checked"
+  ours: Our plugin
+kind:
+  card: Recipe card plugin
+  database: Recipe site plugin
+stats:
+  title: wordpress.org numbers
+  note: "Read from the wordpress.org plugin API on {date}."
+  installs: Active installs
+  installs_value: "{n}+"
+  installs_new: Fewer than 10
+  rating: Rating
+  rating_value: "{rating} / 5 ({count} ratings)"
+  rating_none: No ratings yet
+  version: Current version
+  updated: Last updated
+  listed_since: On wordpress.org since
+  requires: Requires
+  requires_value: "WordPress {wp}, PHP {php}"
+  tested: Tested up to
+  vendor: Developer
+  type: Type
+pricing:
+  title: Pricing
+  free: Free version
+  free_yes: "Yes"
+  plan: Plan
+  price: Price
+  sites: Sites
+  sites_value: "{n}"
+  unlimited: Unlimited
+  per_year: "{price} / year"
+  lifetime: "{price} once (lifetime)"
+  renews: "renews at {price}"
+  promo_note: Prices marked as renewing higher were promotional prices on the day we checked.
+  from: "From {price} / year"
+  free_only: Free
+  lifetime_option: Lifetime licence
+  available: Available
+  not_listed: Not listed
+  refund: Refunds
+  refund_days_30: 30-day money-back guarantee
+  refund_days_14: 14-day money-back guarantee
+  refund_defect_14: 14-day refund for defects only
+  refund_unknown: Not stated on the pricing page
+  source: Pricing source
+home:
+  title: "Best WordPress Recipe Plugins Compared ({year}): {n} Plugins, Sourced"
+  description: "{n} WordPress recipe plugins checked on the same {features} features, with prices, wordpress.org numbers and a source link for every value."
+  h1: WordPress recipe plugins, compared with sources
+  lead: "{n} recipe plugins checked against the same {features} features. Every value links to the page it came from and carries the date we checked it. Where we could not confirm something, the cell says so."
+  cta_table: See the full table
+  cta_method: How we check
+  picks_title: Which plugin for which job
+  picks_lead: There is no single best recipe plugin. These are the picks we can defend from the data below.
+  table_title: Full feature table
+  plugins_title: The plugins
+  compare_title: Side-by-side comparisons
+  guides_title: Best-of guides
+  alternatives_title: Alternatives
+  faq_title: Frequently asked questions
+  legacy_title: Plugins we do not recommend for new sites
+  legacy_lead: These plugins are closed on wordpress.org or show signs of being unmaintained. If you still run one, plan a migration.
+  legacy_reason:
+    author: "Closed on wordpress.org at the author's request"
+    guideline: Closed on wordpress.org for a guideline violation
+    security: Closed on wordpress.org for a security issue
+    at_risk: Vendor site has an expired certificate and a broken pricing page
+  legacy_since: "since {date}"
+  legacy_checked: "checked {date}"
+plugin:
+  title: "{name} Review ({year}): Features, Pricing, Pros and Cons"
+  h1: "{name} review"
+  best_for: Best for
+  pros: Strengths
+  cons: Weaknesses
+  features_title: Features, area by area
+  compare_title: "{name} compared"
+  alternatives_link: "Alternatives to {name}"
+  website: Official website
+  wporg: wordpress.org listing
+  version_checked: "Version checked: {version}"
+  screenshots: Screenshots
+  cta_title: Try Plugixa Recipe
+  cta_text: The free version is on wordpress.org. No account or licence key is needed.
+  cta_wporg: Get it on wordpress.org
+  cta_site: See Pro features
+  col_feature: Feature
+  col_value: Value
+  col_note: Note
+  status_title: Status
+compare:
+  title: "{a} vs {b} ({year}): Features and Pricing Compared"
+  description: "{a} vs {b} on {features} features. Both are checked on {both}; they differ on {differ}. Prices, sources, and who should choose which."
+  h1: "{a} vs {b}"
+  stats: "Both plugins have a checked value for {both} of {features} features, and they differ on {differ} of them."
+  at_a_glance: At a glance
+  choose: "Choose {name} if"
+  verdict: Verdict
+  table_title: Feature by feature
+  more: More comparisons
+alternatives:
+  title: "{n} Best {name} Alternatives ({year})"
+  h1: "{name} alternatives"
+  why: "Why people look for an alternative"
+  picks: The alternatives
+  migrate: Moving your recipes
+  read_review: "Read the {name} review"
+  compare_with: "{a} vs {b}"
+guide:
+  picks: Our picks
+  how: How we chose
+  read_review: Full review
+  table_title: The picks side by side
+methodology:
+  title: "Methodology: How Recipe Plugin Values Are Sourced and Checked"
+  description: Who runs this comparison, where every value comes from, what the labels mean, and how to report a mistake.
+  h1: Methodology
+  features_title: Feature definitions
+notfound:
+  title: Page not found
+  text: That page does not exist.
+  back: Back to the comparison

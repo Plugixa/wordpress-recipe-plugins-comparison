@@ -1,0 +1,101 @@
+areas:
+  schema: Structured data
+  editors: Editors and placement
+  design: Design
+  ingredients: Ingredients
+  instructions: Instructions
+  nutrition: Nutrition
+  readers: Reader tools
+  site: Building a recipe site
+  extras: Migration and extras
+features:
+  schema.jsonld:
+    label: Recipe schema (JSON-LD)
+    def: Outputs Recipe structured data as JSON-LD, the format Google recommends for recipe rich results.
+  schema.guided:
+    label: Guided Recipes markup
+    def: Marks each step so the recipe is eligible for step-by-step guidance on smart displays and Google Assistant.
+  editors.gutenberg:
+    label: Block editor (Gutenberg)
+    def: Has its own block for adding a recipe in the WordPress block editor.
+  editors.classic:
+    label: Classic Editor
+    def: Recipes can be added to posts from the Classic Editor.
+  editors.elementor:
+    label: Elementor
+    def: Has its own Elementor widget.
+  editors.shortcode:
+    label: Shortcode
+    def: A shortcode displays a recipe or a recipe listing anywhere shortcodes run.
+  editors.card_in_post:
+    label: Recipe card inside a post
+    def: A full recipe card can be placed inside a normal blog post, under your own writing.
+  editors.own_pages:
+    label: Standalone recipe pages
+    def: Each recipe gets its own page and URL, separate from blog posts.
+  design.templates:
+    label: Templates and layouts
+    def: How many recipe designs come with the plugin.
+  design.template_editor:
+    label: Template editor
+    def: A visual tool for changing the structure of a recipe template, beyond colours.
+  ingredients.groups:
+    label: Ingredient groups
+    def: Ingredients can be split under headings such as "For the sauce".
+  ingredients.servings:
+    label: Adjustable servings
+    def: Readers change the number of servings and the quantities recalculate.
+  ingredients.unit_conversion:
+    label: Unit conversion
+    def: Readers switch between US and metric units on the recipe.
+  ingredients.links:
+    label: Ingredient links
+    def: Ingredients can link out, for example to an affiliate product.
+  ingredients.equipment:
+    label: Equipment list
+    def: A section listing the tools a recipe needs, shown to readers.
+  instructions.step_media:
+    label: Step photos
+    def: A photo or video can be attached to an individual step.
+  instructions.timers:
+    label: Timers
+    def: Times in the instructions become timers the reader can start.
+  nutrition.label:
+    label: Nutrition label
+    def: Nutrition values are entered by hand and shown as a nutrition facts label.
+  nutrition.auto:
+    label: Automatic nutrition calculation
+    def: Nutrition values are calculated from the ingredient list using a food database.
+  readers.ratings:
+    label: Star ratings
+    def: Readers can rate a recipe out of five stars.
+  readers.print:
+    label: Print view
+    def: A print button opens a clean, printable version of the recipe.
+  readers.jump:
+    label: Jump to recipe
+    def: A button at the top of a post scrolls straight to the recipe card.
+  readers.cook_mode:
+    label: Cook mode
+    def: A switch keeps the reader's screen awake while cooking.
+  readers.favorites:
+    label: Saved recipes
+    def: Readers can save recipes and find them again later.
+  readers.planner:
+    label: Meal planner and shopping list
+    def: Readers build a meal plan or shopping list from recipes on the site.
+  site.index_search:
+    label: Recipe index and search
+    def: Listing pages where visitors browse, filter and search all recipes.
+  site.submissions:
+    label: Visitor-submitted recipes
+    def: Visitors send in recipes through a form on the site, for you to moderate.
+  site.multilingual:
+    label: WPML or Polylang support
+    def: Declares compatibility with a multilingual plugin so recipes can be translated.
+  extras.importers:
+    label: Importers
+    def: Which other recipe plugins it can import recipes from.
+  extras.ai:
+    label: AI recipe drafting
+    def: Generates a recipe draft with an AI model.

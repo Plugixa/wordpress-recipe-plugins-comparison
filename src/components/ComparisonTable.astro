@@ -1,0 +1,183 @@
+---
+import { content, fmt, href, type Locale } from "../lib/i18n";
+import { checkedCount, getAreas, getFeatures, type Product } from "../lib/data";
+import { cellView } from "../lib/cells";
+import { paths } from "../lib/pages";
+import CellValue from "./CellValue.astro";
+
+interface Props {
+  locale: Locale;
+  products: Product[];
+  /** Product chips are pointless when the page is about a fixed pair. */
+  pickProducts?: boolean;
+}
+
+const { locale, products, pickProducts = true } = Astro.props;
+const ui = content(locale, "ui");
+const labels = content(locale, "features");
+const areas = getAreas();
+const total = getFeatures().length;
+---
+
+<div class="cmp-app" data-total-rows={total} data-total-cols={products.length} data-status={ui.table.status}>
+  <form class="toolbar" hidden>
+    {
+      pickProducts && (
+        <fieldset>
+          <legend>{ui.table.products}</legend>
+          {products.map((p) => (
+            <label class="chip">
+              <input type="checkbox" name="p" value={p.slug} checked />
+              {p.name}
+            </label>
+          ))}
+        </fieldset>
+      )
+    }
+    <div class="row">
+      <label>
+        {ui.table.area}
+        <select name="area">
+          <option value="">{ui.table.all_areas}</option>
+          {areas.map((a) => <option value={a.id}>{labels.areas[a.id]}</option>)}
+        </select>
+      </label>
+      <label><input type="checkbox" name="diff" /> {ui.table.only_diff}</label>
+      <label><input type="checkbox" name="checked" /> {ui.table.hide_unchecked}</label>
+      <button type="reset">{ui.table.reset}</button>
+      <span class="status" role="status" aria-live="polite"></span>
+    </div>
+  </form>
+
+  {products.length > 2 && <p class="scroll-hint">{ui.table.scroll_hint}</p>}
+
+  <div class="table-wrap tall" tabindex="0" role="region" aria-label={fmt(ui.table.caption, { n: products.length })}>
+    <table class="cmp">
+      <caption class="sr-only">{fmt(ui.table.caption, { n: products.length })}</caption>
+      <thead>
+        <tr>
+          <th scope="col" class="feature-col">{ui.table.feature}</th>
+          {
+            products.map((p) => (
+              <th scope="col" data-p={p.slug} class:list={{ "own-col": p.own }}>
+                <a class="col-name" href={href(locale, paths.plugin(p.slug))}>
+                  {p.name}
+                </a>
+                <span class="col-meta">
+                  {p.own ? ui.table.ours : ui.kind[p.kind]}
+                  <br />
+                  {fmt(ui.table.checked, { n: checkedCount(p), total })}
+                </span>
+              </th>
+            ))
+          }
+        </tr>
+      </thead>
+      {
+        areas.map((area) => (
+          <tbody data-area={area.id}>
+            <tr class="area-row">
+              <th scope="colgroup" colspan={products.length + 1}>
+                {labels.areas[area.id]}
+              </th>
+            </tr>
+            {area.features.map((f) => (
+              <tr data-row>
+                <th scope="row" class="feature-col">
+                  {labels.features[f.id].label}
+                  <span class="def">{labels.features[f.id].def}</span>
+                </th>
+                {products.map((p) => (
+                  <td data-p={p.slug} data-v={cellView(locale, p, f.id).signature} class:list={{ "own-col": p.own }}>
+                    <CellValue locale={locale} product={p} featureId={f.id} />
+                  </td>
+                ))}
+              </tr>
+            ))}
+          </tbody>
+        ))
+      }
+    </table>
+  </div>
+
+  <ul class="legend">
+    <li><span class="val yes">{ui.values.yes}</span>: {ui.legend.yes}</li>
+    <li><span class="val partial">{ui.values.partial}</span>: {ui.legend.partial}</li>
+    <li><span class="val no">{ui.values.no}</span>: {ui.legend.no}</li>
+    <li><span class="val unverified">{ui.values.unverified}</span>: {ui.legend.unverified}</li>
+  </ul>
+</div>
+
+<script>
+  // The table is complete static HTML; this only hides rows and columns and mirrors the choice in the URL.
+  for (const app of document.querySelectorAll<HTMLElement>(".cmp-app")) {
+    const form = app.querySelector<HTMLFormElement>("form.toolbar")!;
+    const status = app.querySelector<HTMLElement>(".status")!;
+    const productBoxes = [...form.querySelectorAll<HTMLInputElement>('input[name="p"]')];
+    const area = form.elements.namedItem("area") as HTMLSelectElement;
+    const diff = form.elements.namedItem("diff") as HTMLInputElement;
+    const checked = form.elements.namedItem("checked") as HTMLInputElement;
+    const rows = [...app.querySelectorAll<HTMLTableRowElement>("tr[data-row]")];
+    const bodies = [...app.querySelectorAll<HTMLElement>("tbody[data-area]")];
+    const allSlugs = [...app.querySelectorAll<HTMLElement>("thead th[data-p]")].map((th) => th.dataset.p!);
+
+    const selected = () => (productBoxes.length ? productBoxes.filter((b) => b.checked).map((b) => b.value) : allSlugs);
+
+    function readUrl() {
+      const q = new URLSearchParams(location.search);
+      const p = q.get("p")?.split(",");
+      if (p && productBoxes.length) for (const b of productBoxes) b.checked = p.includes(b.value);
+      // Three columns fit a phone; the rest stay one tap away.
+      else if (productBoxes.length > 3 && matchMedia("(max-width: 44rem)").matches)
+        productBoxes.forEach((b, i) => (b.checked = i < 3));
+      area.value = q.get("area") ?? "";
+      diff.checked = q.has("diff");
+      checked.checked = q.has("checked");
+    }
+
+    function writeUrl(slugs: string[]) {
+      const q = new URLSearchParams();
+      if (productBoxes.length && slugs.length !== allSlugs.length) q.set("p", slugs.join(","));
+      if (area.value) q.set("area", area.value);
+      if (diff.checked) q.set("diff", "1");
+      if (checked.checked) q.set("checked", "1");
+      const s = q.toString();
+      history.replaceState(null, "", s ? `?${s}${location.hash}` : location.pathname + location.hash);
+    }
+
+    function apply(save = true) {
+      const slugs = selected();
+      for (const el of app.querySelectorAll<HTMLElement>("[data-p]")) el.hidden = !slugs.includes(el.dataset.p!);
+
+      let visible = 0;
+      for (const row of rows) {
+        const sigs = [...row.querySelectorAll<HTMLElement>("td[data-p]")]
+          .filter((td) => slugs.includes(td.dataset.p!))
+          .map((td) => td.dataset.v!);
+        const sameEverywhere = new Set(sigs).size <= 1;
+        const nobodyChecked = sigs.every((s) => s.startsWith("unverified"));
+        row.hidden = (diff.checked && sameEverywhere) || (checked.checked && nobodyChecked);
+        if (!row.hidden) visible++;
+      }
+      let shown = 0;
+      for (const body of bodies) {
+        const live = [...body.querySelectorAll("tr[data-row]")].filter((r) => !(r as HTMLElement).hidden).length;
+        body.hidden = (area.value !== "" && body.dataset.area !== area.value) || live === 0;
+        if (!body.hidden) shown += live;
+      }
+      status.textContent = app.dataset
+        .status!.replace("{rows}", String(shown))
+        .replace("{total}", app.dataset.totalRows!)
+        .replace("{cols}", String(slugs.length))
+        .replace("{all}", app.dataset.totalCols!);
+      if (save) writeUrl(slugs);
+    }
+
+    readUrl();
+    form.hidden = false;
+    form.addEventListener("change", () => apply());
+    form.addEventListener("reset", () => setTimeout(apply));
+    // The first pass only reflects the URL (or the phone default), so it must not rewrite the address.
+    apply(false);
+  }
+</script>

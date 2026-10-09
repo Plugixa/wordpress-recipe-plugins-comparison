@@ -1,0 +1,16 @@
+{
+  "slug": "delicious-recipes",
+  "api_url": "https://api.wordpress.org/plugins/info/1.2/?action=plugin_information&request[slug]=delicious-recipes",
+  "fetched_at": "2026-10-09",
+  "listed": true,
+  "name": "WP Delicious &#8211; Recipe Plugin for Food Bloggers (formerly Delicious Recipes)",
+  "version": "1.10.10",
+  "active_installs": 4000,
+  "rating": 4.9,
+  "num_ratings": 71,
+  "last_updated": "2026-10-08",
+  "added": "2020-10-06",
+  "requires_wp": "5.8",
+  "requires_php": "7.4",
+  "tested_up_to": "7.1.3"
+}

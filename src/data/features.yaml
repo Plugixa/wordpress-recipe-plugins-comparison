@@ -1,0 +1,51 @@
+# Feature taxonomy. Labels and definitions live in src/i18n/{locale}/features.yaml.
+# type: support = yes / partial / no / unverified;  text = short free text.
+areas:
+  - id: schema
+    features:
+      - { id: schema.jsonld, type: support }
+      - { id: schema.guided, type: support }
+  - id: editors
+    features:
+      - { id: editors.gutenberg, type: support }
+      - { id: editors.classic, type: support }
+      - { id: editors.elementor, type: support }
+      - { id: editors.shortcode, type: support }
+      - { id: editors.card_in_post, type: support }
+      - { id: editors.own_pages, type: support }
+  - id: design
+    features:
+      - { id: design.templates, type: text }
+      - { id: design.template_editor, type: support }
+  - id: ingredients
+    features:
+      - { id: ingredients.groups, type: support }
+      - { id: ingredients.servings, type: support }
+      - { id: ingredients.unit_conversion, type: support }
+      - { id: ingredients.links, type: support }
+      - { id: ingredients.equipment, type: support }
+  - id: instructions
+    features:
+      - { id: instructions.step_media, type: support }
+      - { id: instructions.timers, type: support }
+  - id: nutrition
+    features:
+      - { id: nutrition.label, type: support }
+      - { id: nutrition.auto, type: support }
+  - id: readers
+    features:
+      - { id: readers.ratings, type: support }
+      - { id: readers.print, type: support }
+      - { id: readers.jump, type: support }
+      - { id: readers.cook_mode, type: support }
+      - { id: readers.favorites, type: support }
+      - { id: readers.planner, type: support }
+  - id: site
+    features:
+      - { id: site.index_search, type: support }
+      - { id: site.submissions, type: support }
+      - { id: site.multilingual, type: support }
+  - id: extras
+    features:
+      - { id: extras.importers, type: text }
+      - { id: extras.ai, type: support }

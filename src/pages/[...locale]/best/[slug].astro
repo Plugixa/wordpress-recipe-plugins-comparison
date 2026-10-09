@@ -1,0 +1,64 @@
+---
+import Base from "../../../layouts/Base.astro";
+import ComparisonTable from "../../../components/ComparisonTable.astro";
+import ProductCard from "../../../components/ProductCard.astro";
+import { LOCALES, content, href, localeParam, type Locale } from "../../../lib/i18n";
+import { getPagesConfig, getProduct, lastChecked } from "../../../lib/data";
+import { guideMeta, paths } from "../../../lib/pages";
+import { articleLd, itemListLd } from "../../../lib/seo";
+
+export function getStaticPaths() {
+  return LOCALES.flatMap((locale) =>
+    getPagesConfig().guides.map((guide) => ({
+      params: { locale: localeParam(locale), slug: guide.slug },
+      props: { locale, slug: guide.slug, picks: guide.picks },
+    })),
+  );
+}
+
+const { locale, slug, picks } = Astro.props as { locale: Locale; slug: string; picks: string[] };
+const ui = content(locale, "ui");
+const guides = content(locale, "guides");
+const prose = guides[slug];
+const meta = guideMeta(locale, slug);
+const products = picks.map(getProduct);
+const modified = lastChecked(products);
+const otherGuides = getPagesConfig().guides.filter((g) => g.slug !== slug);
+
+const crumbs = [{ name: ui.breadcrumb.home, path: paths.home() }, { name: ui.breadcrumb.guides, path: paths.home() }, { name: meta.h1 }];
+const jsonld = [itemListLd(locale, meta.h1, products), articleLd(locale, meta.path, meta.title, meta.description, modified)];
+---
+
+<Base locale={locale} meta={meta} crumbs={crumbs} jsonld={jsonld} modified={modified} wide>
+  <article>
+    <h1>{meta.h1}</h1>
+    <div class="prose">
+      {prose.intro.map((p: string, i: number) => <p class:list={{ lead: i === 0 }}>{p}</p>)}
+    </div>
+
+    <section aria-labelledby="picks-h">
+      <h2 id="picks-h">{ui.guide.picks}</h2>
+      <ol class="ranked">
+        {products.map((p) => <li><ProductCard locale={locale} product={p} text={prose.picks[p.slug]} /></li>)}
+      </ol>
+    </section>
+
+    <section aria-labelledby="how-h" class="prose">
+      <h2 id="how-h">{ui.guide.how}</h2>
+      {prose.how.map((p: string) => <p>{p}</p>)}
+      <p><a href={href(locale, paths.methodology())}>{ui.nav.methodology}</a></p>
+    </section>
+
+    <section aria-labelledby="table-h">
+      <h2 id="table-h">{ui.guide.table_title}</h2>
+      <ComparisonTable locale={locale} products={products} />
+    </section>
+
+    <section aria-labelledby="more-h">
+      <h2 id="more-h">{ui.home.guides_title}</h2>
+      <ul class="link-list">
+        {otherGuides.map((g) => <li><a href={href(locale, paths.guide(g.slug))}>{guides[g.slug].nav}</a></li>)}
+      </ul>
+    </section>
+  </article>
+</Base>

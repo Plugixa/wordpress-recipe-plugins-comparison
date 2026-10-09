@@ -1,0 +1,28 @@
+---
+import type { Locale } from "../lib/i18n";
+import type { Product } from "../lib/data";
+import { cellView } from "../lib/cells";
+
+interface Props {
+  locale: Locale;
+  product: Product;
+  featureId: string;
+  /** Notes are shown in their own column on plugin pages. */
+  showNote?: boolean;
+}
+
+const { locale, product, featureId, showNote = true } = Astro.props;
+const view = cellView(locale, product, featureId);
+---
+
+{
+  view.sourceUrl ? (
+    <a class:list={["val", view.state]} href={view.sourceUrl} rel="noopener nofollow">
+      {view.label}
+    </a>
+  ) : (
+    <span class:list={["val", view.state]}>{view.label}</span>
+  )
+}
+{view.tier && <span class="tier">{view.tier}</span>}
+{showNote && view.note && <span class="note">{view.note}</span>}

@@ -1,0 +1,93 @@
+# Keyed by guide slug in src/data/pages.yaml. `picks` is keyed by product slug.
+best-wordpress-recipe-plugins:
+  title: "Best WordPress Recipe Plugins ({year}): 7 Compared With Sources"
+  nav: Best recipe plugins overall
+  description: The seven maintained WordPress recipe plugins ranked by what each does best, with prices, wordpress.org numbers and sources.
+  h1: Best WordPress recipe plugins
+  intro:
+    - Seven recipe plugins are actively maintained on wordpress.org today. They fall into two groups. Card plugins add a recipe card to a blog post. Recipe site plugins give each recipe its own page and build an index around them.
+    - The ranking below starts from the needs of a typical food blog, then covers the cases where another plugin fits better.
+  picks:
+    wp-recipe-maker: The default choice for a food blog. It has the largest user base, the best rating, and a free version with JSON-LD, Guided Recipes markup and a template editor. Expect to pay $99 a year once you need nutrition calculation or unit conversion.
+    recipe-card-blocks: A clean block-editor card with cook mode free. The 10-site plan at $99 a year is the best multi-site price here. It does not support the Classic Editor.
+    create: The best free version for nutrition, since the calculation is free. It also covers how-to and list cards. The paid plan is expensive at $150 a year.
+    wp-delicious: The pick for building a whole recipe site, with a free index, search and favourites, and a lifetime licence. The vendor says the intended design depends on a compatible theme.
+    plugixa-recipe: Our own plugin. It is a recipe database with free visitor submissions, reviews and listing layouts. It ranks here, not higher, because JSON-LD is in Pro, it has no card for blog posts, and it is new.
+    tasty-recipes: A simple card with one feature set on every paid plan. It has no built-in nutrition calculator, and prices rise at renewal.
+    cooked: A complete free feature set for readers, including timers. Its rating is the lowest here because of older reviews about bugs and support, so check recent feedback first.
+  how:
+    - We ranked on four things that can be checked. They are what the free version includes, what the paid tiers cost per site, how actively the plugin is maintained, and what its wordpress.org users say.
+    - We did not run speed tests, and we did not test every feature by hand. Values come from each vendor's own pages; the methodology page explains the limits of that.
+
+best-free-recipe-plugins:
+  title: "Best Free WordPress Recipe Plugins ({year})"
+  nav: Best free recipe plugins
+  description: What each free WordPress recipe plugin includes without paying, from schema and nutrition to submissions, with sources.
+  h1: Best free WordPress recipe plugins
+  intro:
+    - Every plugin in this comparison has a free version, but they hold back different things. One gives nutrition calculation free and charges for adjustable servings. Another does the opposite.
+    - The right free plugin depends on which paid feature you can least do without.
+  picks:
+    create: Free automatic nutrition calculation, free reviews, and JSON-LD for recipes, how-tos and lists. Adjustable servings and unit conversion are paid.
+    wp-recipe-maker: Free JSON-LD, Guided Recipes markup, template editor, step photos and importers. Adjustable servings and the nutrition label are paid.
+    plugixa-recipe: Free visitor submissions, reviews with photos, adjustable servings, a nutrition label and four listing layouts. JSON-LD is paid, which matters if search appearance is your priority.
+    recipe-card-blocks: Free cook mode, star ratings, nutrition block and an AI recipe generator. Adjustable servings are paid, and there is no Classic Editor support.
+    cooked: Free timers, servings switcher, nutrition label, full-screen cooking view and recipe search. Ratings and favourites are paid.
+    wp-delicious: Free recipe index, advanced search, favourites and nine blocks. Visitor submissions are paid.
+  how:
+    - A feature counts as free only if the vendor's own page lists it in the free version. Where we could not confirm the tier, the table says "Not checked".
+    - If you care most about how recipes appear in Google, note that JSON-LD is free in every plugin here except Plugixa Recipe, and was not confirmed for Cooked.
+
+recipe-directory-plugins:
+  title: "Best WordPress Plugins for a Recipe Directory or Community Recipe Site ({year})"
+  nav: Best for a recipe directory
+  description: WordPress plugins for building a recipe directory with an index, search, visitor submissions and reviews, compared with sources.
+  h1: Best plugins for a recipe directory
+  intro:
+    - A recipe directory is a site where the recipes are the content. Visitors browse by category or cuisine, search, save and often submit their own. That is a different job from adding a recipe card under a blog post.
+    - Four things matter most here. Recipes need their own pages, the site needs an index with filters, visitors need a way to submit recipes, and readers need accounts or saved recipes.
+  picks:
+    plugixa-recipe: Our own plugin, and the use it was built for. Recipe pages, category and cuisine archives, search, reviews and visitor submissions with moderation are all free. Weak points are that JSON-LD is in Pro, saved recipes have no list page, and the plugin is new.
+    wp-delicious: The proven choice. Recipe pages, index, advanced search and a user dashboard with favourites are free, and JSON-LD is included. Visitor submissions need Pro at $59 a year.
+    cooked: Recipe search and lists are free; profiles, favourites, ratings and submissions are in Pro at $49. Read recent reviews first.
+    wp-recipe-maker: It can do this at the Elite tier, which adds submissions, collections and meal planning for $149 a year. It remains a card plugin, so recipes sit inside posts.
+  how:
+    - We looked at which of the four needs each plugin meets, and at what price.
+    - If visitor submissions are the deciding feature, only Plugixa Recipe includes them free. If a track record is the deciding feature, WP Delicious is the stronger choice.
+
+recipe-plugins-with-nutrition-calculator:
+  title: "WordPress Recipe Plugins With a Nutrition Calculator ({year})"
+  nav: Best with nutrition calculation
+  description: Which WordPress recipe plugins calculate nutrition facts automatically, which data source each uses, and what it costs.
+  h1: Recipe plugins with a nutrition calculator
+  intro:
+    - A nutrition calculator reads your ingredient list and fills in calories, fat, protein and the rest from a food database. Without one, you enter every value by hand.
+    - Five plugins here offer it, at very different prices. Check the result for a few recipes whichever you choose; calculators can match an ingredient to the wrong food.
+  picks:
+    create: The only free calculator in this comparison. It uses API Ninjas through the vendor's service.
+    cooked: In Pro at $49 for one site, using the Edamam database.
+    recipe-card-blocks: In the Professional plan at $79 a year for three sites. The vendor says it is based on USDA data.
+    wp-recipe-maker: In the Pro tier at $99 a year, using the Spoonacular API. It also supports custom and calculated nutrients.
+    tasty-recipes: No built-in calculator. It connects to Nutrifox, a separate paid service from the same company.
+    plugixa-recipe: No food-database calculator. Pro can ask an AI model to estimate values, which is less reliable than a database lookup. The manual nutrition label is free.
+  how:
+    - We list the tier and data source each vendor states. We did not compare the accuracy of the calculators.
+    - A manual nutrition label, where you type the values, is free in Create, Recipe Card Blocks, Cooked, WP Delicious and Plugixa Recipe.
+
+recipe-plugins-for-elementor:
+  title: "Best WordPress Recipe Plugins for Elementor ({year})"
+  nav: Best for Elementor
+  description: WordPress recipe plugins with their own Elementor widget, what the widget does, and whether it is free.
+  h1: Best recipe plugins for Elementor
+  intro:
+    - Any recipe plugin with a shortcode can be dropped into Elementor's shortcode widget. A dedicated widget is better, because you choose the recipe and its options from Elementor's panel and see the result while editing.
+    - Five plugins here have their own Elementor integration.
+  picks:
+    wp-recipe-maker: A free Elementor widget for inserting a recipe card, alongside the block and Classic Editor support.
+    recipe-card-blocks: A free Recipe Card widget for Elementor, with the same card styles as the block.
+    tasty-recipes: The free Lite edition lists Elementor support for adding a recipe card.
+    plugixa-recipe: A free widget that shows a recipe listing, with controls for layout, categories, cuisines, ordering and dark mode. It does not insert a single recipe card.
+    wp-delicious: More than 35 Elementor widgets through Delisho, a free companion plugin from the same vendor.
+  how:
+    - A plugin is listed only if its vendor states Elementor support on its own pages.
+    - Elementor support for Create and Cooked could not be confirmed, so they are left out.

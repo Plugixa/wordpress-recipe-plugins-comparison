@@ -1,0 +1,7 @@
+items:
+  - { file: grid.webp, alt: "Listado de recetas en diseño de cuadrícula" }
+  - { file: recipe-page.webp, alt: "Página de receta con tiempos, valoración, impresión, guardado y compartir" }
+  - { file: ingredients.webp, alt: "Ingredientes agrupados con ajuste de raciones y pasos numerados" }
+  - { file: archives.webp, alt: "Archivo por categoría y cocina con filtros" }
+  - { file: recipe-manager.webp, alt: "Pantalla del gestor de recetas en la administración de WordPress" }
+  - { file: view-editor.webp, alt: "Editor visual de un diseño de listado" }

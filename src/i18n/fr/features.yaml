@@ -1,0 +1,101 @@
+areas:
+  schema: Données structurées
+  editors: Éditeurs et emplacement
+  design: Design
+  ingredients: Ingrédients
+  instructions: Instructions
+  nutrition: Nutrition
+  readers: Outils pour les lecteurs
+  site: Créer un site de recettes
+  extras: Migration et extras
+features:
+  schema.jsonld:
+    label: Schéma Recipe (JSON-LD)
+    def: "Génère les données structurées Recipe en JSON-LD, le format recommandé par Google pour les résultats enrichis de recettes."
+  schema.guided:
+    label: Balisage Guided Recipes
+    def: "Balise chaque étape pour que la recette soit éligible au guidage pas à pas sur les écrans connectés et Google Assistant."
+  editors.gutenberg:
+    label: Éditeur de blocs (Gutenberg)
+    def: "Dispose de son propre bloc pour ajouter une recette dans l'éditeur de blocs de WordPress."
+  editors.classic:
+    label: Éditeur classique
+    def: "Les recettes peuvent être ajoutées aux articles depuis l'éditeur classique."
+  editors.elementor:
+    label: Elementor
+    def: Dispose de son propre widget Elementor.
+  editors.shortcode:
+    label: Shortcode
+    def: Un shortcode affiche une recette ou une liste de recettes partout où les shortcodes fonctionnent.
+  editors.card_in_post:
+    label: Fiche recette dans un article
+    def: "Une fiche recette complète peut être placée dans un article de blog classique, sous votre propre texte."
+  editors.own_pages:
+    label: Pages de recette autonomes
+    def: "Chaque recette a sa propre page et sa propre URL, distinctes des articles de blog."
+  design.templates:
+    label: Modèles et mises en page
+    def: Nombre de designs de recette fournis avec le plugin.
+  design.template_editor:
+    label: Éditeur de modèles
+    def: "Un outil visuel pour modifier la structure d'un modèle de recette, au-delà des couleurs."
+  ingredients.groups:
+    label: "Groupes d'ingrédients"
+    def: "Les ingrédients peuvent être répartis sous des intertitres tels que « Pour la sauce »."
+  ingredients.servings:
+    label: Portions ajustables
+    def: Les lecteurs modifient le nombre de portions et les quantités sont recalculées.
+  ingredients.unit_conversion:
+    label: "Conversion d'unités"
+    def: Les lecteurs basculent entre unités américaines et unités métriques sur la recette.
+  ingredients.links:
+    label: "Liens sur les ingrédients"
+    def: "Les ingrédients peuvent porter un lien externe, par exemple vers un produit affilié."
+  ingredients.equipment:
+    label: Liste du matériel
+    def: "Une section qui liste les ustensiles nécessaires à la recette, affichée aux lecteurs."
+  instructions.step_media:
+    label: "Photos d'étapes"
+    def: Une photo ou une vidéo peut être associée à une étape précise.
+  instructions.timers:
+    label: Minuteurs
+    def: Les durées indiquées dans les instructions deviennent des minuteurs que le lecteur peut lancer.
+  nutrition.label:
+    label: Étiquette nutritionnelle
+    def: "Les valeurs nutritionnelles sont saisies à la main et affichées sous forme d'étiquette nutritionnelle."
+  nutrition.auto:
+    label: Calcul nutritionnel automatique
+    def: "Les valeurs nutritionnelles sont calculées à partir de la liste d'ingrédients, à l'aide d'une base de données alimentaire."
+  readers.ratings:
+    label: Notes par étoiles
+    def: Les lecteurs peuvent noter une recette sur cinq étoiles.
+  readers.print:
+    label: Version imprimable
+    def: "Un bouton d'impression ouvre une version épurée et imprimable de la recette."
+  readers.jump:
+    label: Aller à la recette
+    def: "Un bouton en haut de l'article fait défiler la page directement jusqu'à la fiche recette."
+  readers.cook_mode:
+    label: Mode cuisine
+    def: "Un interrupteur empêche l'écran du lecteur de se mettre en veille pendant qu'il cuisine."
+  readers.favorites:
+    label: Recettes enregistrées
+    def: Les lecteurs peuvent enregistrer des recettes et les retrouver plus tard.
+  readers.planner:
+    label: Planificateur de repas et liste de courses
+    def: Les lecteurs composent un menu ou une liste de courses à partir des recettes du site.
+  site.index_search:
+    label: Index et recherche de recettes
+    def: "Des pages de liste où les visiteurs parcourent, filtrent et recherchent l'ensemble des recettes."
+  site.submissions:
+    label: Recettes proposées par les visiteurs
+    def: "Les visiteurs envoient des recettes via un formulaire sur le site, que vous modérez."
+  site.multilingual:
+    label: Compatibilité WPML ou Polylang
+    def: Déclare une compatibilité avec un plugin multilingue pour que les recettes puissent être traduites.
+  extras.importers:
+    label: Outils d'import
+    def: Les autres plugins de recettes dont il peut importer les recettes.
+  extras.ai:
+    label: Rédaction de recettes par IA
+    def: "Génère un brouillon de recette à l'aide d'un modèle d'IA."

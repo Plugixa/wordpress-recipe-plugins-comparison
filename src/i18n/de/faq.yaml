@@ -1,0 +1,17 @@
+items:
+  - q: Welches ist das beste WordPress Rezept-Plugin?
+    a: Für die meisten Food-Blogs WP Recipe Maker. Es hat die größte Nutzerbasis, die höchste Bewertung auf wordpress.org und eine kostenlose Version mit JSON-LD-Schema und Template-Editor. In bestimmten Fällen passen andere Plugins besser, etwa Create für kostenlose Nährwertberechnung, Recipe Card Blocks für mehrere Websites und WP Delicious oder Plugixa Recipe für ein Rezeptverzeichnis.
+  - q: Welches Rezept-Plugin ist das beste, wenn ich nichts bezahlen möchte?
+    a: Das hängt davon ab, welche Funktion Sie am dringendsten brauchen. Create bietet die automatische Nährwertberechnung kostenlos. WP Recipe Maker bietet einen Template-Editor und Guided-Recipes-Markup kostenlos. Recipe Card Blocks bietet den Kochmodus kostenlos. Plugixa Recipe bietet Rezepteinreichungen durch Besucher und Rezensionen kostenlos, behält JSON-LD aber der Bezahlversion vor.
+  - q: Brauche ich ein Rezept-Plugin, damit Google meine Rezepte anzeigt?
+    a: Google liest strukturierte Daten vom Typ Recipe aus, um Bewertungen, Kochzeit und Bilder in den Suchergebnissen anzuzeigen. Ein Rezept-Plugin schreibt diese Daten für Sie. Google empfiehlt das Format JSON-LD, das wir bei fünf der sieben Plugins in diesem Vergleich als kostenlos bestätigt haben.
+  - q: Was ist der Unterschied zwischen einem Rezeptkarten-Plugin und einem Plugin für Rezept-Websites?
+    a: Ein Karten-Plugin fügt eine Rezeptkarte in einen Blogbeitrag ein, unter Ihrem eigenen Text. Ein Plugin für Rezept-Websites gibt jedem Rezept eine eigene Seite und baut Rezeptlisten, Kategorien und eine Suche um die Rezepte herum. WP Recipe Maker, Tasty Recipes, Create und Recipe Card Blocks sind Karten-Plugins. WP Delicious, Cooked und Plugixa Recipe sind eher auf Rezept-Websites ausgerichtet.
+  - q: Kann ich das Rezept-Plugin wechseln, ohne meine Rezepte zu verlieren?
+    a: In der Regel ja, wenn das neue Plugin einen Importer für das alte hat. WP Recipe Maker importiert aus mehr als 20 Plugins, Tasty Recipes und Create aus jeweils 11. Führen Sie den Import zuerst auf einer Staging-Kopie durch und prüfen Sie, ob Bewertungen und Bilder übernommen wurden.
+  - q: Welche Rezept-Plugins berechnen Nährwerte automatisch?
+    a: Create macht das kostenlos. WP Recipe Maker, Recipe Card Blocks und Cooked machen es in einem kostenpflichtigen Tarif. Tasty Recipes lässt sich mit Nutrifox verbinden, einem separaten Abonnement. Plugixa Recipe hat keinen Rechner auf Basis einer Lebensmitteldatenbank.
+  - q: Wer betreibt diesen Vergleich?
+    a: Plugixa, das Unternehmen hinter Plugixa Recipe. Das ist ein Interessenkonflikt. Um ihn zu begrenzen, verlinkt jeder Wert auf seine Quelle, jede Plugin-Seite nennt neben den Stärken auch die Schwächen, und unser eigenes Plugin steht nur dort auf dem ersten Platz, wo die Daten das stützen.
+  - q: Wie oft werden die Daten aktualisiert?
+    a: Installationszahlen, Bewertungen und Versionsnummern werden jede Woche über die API von wordpress.org abgerufen. Funktionen und Preise werden von Hand geprüft, und jede Plugin-Seite zeigt das Datum der letzten Prüfung.

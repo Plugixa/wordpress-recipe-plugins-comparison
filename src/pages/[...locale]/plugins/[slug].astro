@@ -1,0 +1,165 @@
+---
+import Base from "../../../layouts/Base.astro";
+import CellValue from "../../../components/CellValue.astro";
+import Pricing from "../../../components/Pricing.astro";
+import Stats from "../../../components/Stats.astro";
+import { LOCALES, content, fmt, href, asset, localeParam, formatDate, type Locale } from "../../../lib/i18n";
+import { getAreas, getPagesConfig, getProducts, type Product } from "../../../lib/data";
+import { cellView } from "../../../lib/cells";
+import { alternativesMeta, compareLinksFor, paths, pluginMeta } from "../../../lib/pages";
+import { articleLd, softwareLd } from "../../../lib/seo";
+
+export function getStaticPaths() {
+  return LOCALES.flatMap((locale) =>
+    getProducts().map((product) => ({
+      params: { locale: localeParam(locale), slug: product.slug },
+      props: { locale, product },
+    })),
+  );
+}
+
+const { locale, product } = Astro.props as { locale: Locale; product: Product };
+const ui = content(locale, "ui");
+const labels = content(locale, "features");
+const prose = content(locale, "products")[product.slug];
+const meta = pluginMeta(locale, product);
+const vars = { name: product.name };
+const compareLinks = compareLinksFor(locale, product.slug);
+const hasAlternatives = getPagesConfig().alternatives.some((e) => e.target === product.slug);
+const shots = product.own ? (content(locale, "screens").items as { file: string; alt: string }[]) : [];
+const utm = "?utm_source=recipe-plugins-comparison&utm_medium=referral&utm_campaign=review";
+
+const crumbs = [{ name: ui.breadcrumb.home, path: paths.home() }, { name: ui.breadcrumb.plugins, path: paths.home() }, { name: product.name }];
+const jsonld = [
+  { "@context": "https://schema.org", ...softwareLd(locale, product) },
+  articleLd(locale, meta.path, meta.title, meta.description, product.verified_at),
+];
+---
+
+<Base locale={locale} meta={meta} crumbs={crumbs} jsonld={jsonld} modified={product.verified_at}>
+  <article>
+    <header>
+      <div class="meta-row">
+        <span class="badge">{ui.kind[product.kind]}</span>
+        {product.own && <span class="badge own">{ui.table.ours}</span>}
+        <span class="small muted">
+          {fmt(ui.plugin.version_checked, { version: product.version_checked })} · {formatDate(product.verified_at, locale)}
+        </span>
+      </div>
+      <h1>{meta.h1}</h1>
+      <p class="lead">{prose.summary}</p>
+      <div class="callout">
+        <p><strong>{ui.plugin.best_for}:</strong> {prose.best_for}</p>
+        {prose.status && <p><strong>{ui.plugin.status_title}:</strong> {prose.status}</p>}
+      </div>
+      <div class="actions">
+        {
+          product.own ? (
+            <>
+              <a class="btn" href={`https://wordpress.org/plugins/${product.wporg_slug}/`} rel="noopener">{ui.plugin.cta_wporg}</a>
+              <a class="btn ghost" href={`${product.homepage}${utm}`} rel="noopener">{ui.plugin.cta_site}</a>
+            </>
+          ) : (
+            <>
+              <a class="btn ghost" href={product.homepage} rel="noopener nofollow">{ui.plugin.website}</a>
+              {product.wporg_slug && (
+                <a class="btn ghost" href={`https://wordpress.org/plugins/${product.wporg_slug}/`} rel="noopener nofollow">
+                  {ui.plugin.wporg}
+                </a>
+              )}
+            </>
+          )
+        }
+      </div>
+    </header>
+
+    <section aria-labelledby="proscons-h">
+      <h2 id="proscons-h" class="sr-only">{ui.plugin.pros} / {ui.plugin.cons}</h2>
+      <div class="two-col">
+        <div class="panel pros">
+          <h3>{ui.plugin.pros}</h3>
+          <ul>{prose.pros.map((p: string) => <li>{p}</li>)}</ul>
+        </div>
+        <div class="panel cons">
+          <h3>{ui.plugin.cons}</h3>
+          <ul>{prose.cons.map((c: string) => <li>{c}</li>)}</ul>
+        </div>
+      </div>
+    </section>
+
+    <section aria-labelledby="stats-h">
+      <h2 id="stats-h">{ui.stats.title}</h2>
+      <Stats locale={locale} product={product} />
+    </section>
+
+    <section aria-labelledby="pricing-h">
+      <h2 id="pricing-h">{ui.pricing.title}</h2>
+      <Pricing locale={locale} product={product} />
+    </section>
+
+    {
+      shots.length > 0 && (
+        <section aria-labelledby="shots-h">
+          <h2 id="shots-h">{ui.plugin.screenshots}</h2>
+          <ul class="shots">
+            {shots.map((s) => (
+              <li>
+                <figure>
+                  <img src={asset(`plugixa/${s.file}`)} alt={s.alt} width="1200" height="750" loading="lazy" decoding="async" />
+                  <figcaption>{s.alt}</figcaption>
+                </figure>
+              </li>
+            ))}
+          </ul>
+        </section>
+      )
+    }
+
+    <section aria-labelledby="features-h">
+      <h2 id="features-h">{ui.plugin.features_title}</h2>
+      {
+        getAreas().map((area) => (
+          <>
+            <h3>{labels.areas[area.id]}</h3>
+            <div class="table-wrap" style="margin-bottom:1.5rem">
+              <table>
+                <thead>
+                  <tr>
+                    <th scope="col" style="width:34%">{ui.plugin.col_feature}</th>
+                    <th scope="col" style="width:22%">{ui.plugin.col_value}</th>
+                    <th scope="col">{ui.plugin.col_note}</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {area.features.map((f) => (
+                    <tr>
+                      <th scope="row">
+                        {labels.features[f.id].label}
+                        <span class="def">{labels.features[f.id].def}</span>
+                      </th>
+                      <td><CellValue locale={locale} product={product} featureId={f.id} showNote={false} /></td>
+                      <td class="small">{cellView(locale, product, f.id).note ?? ""}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </>
+        ))
+      }
+    </section>
+
+    <section aria-labelledby="more-h">
+      <h2 id="more-h">{fmt(ui.plugin.compare_title, vars)}</h2>
+      <ul class="link-list">
+        {compareLinks.map((l) => <li><a href={l.href}>{l.label}</a></li>)}
+        {
+          hasAlternatives && (
+            <li><a href={href(locale, paths.alternatives(product.slug))}>{alternativesMeta(locale, product.slug).h1}</a></li>
+          )
+        }
+        <li><a href={`${href(locale, paths.home())}#table`}>{ui.home.table_title}</a></li>
+      </ul>
+    </section>
+  </article>
+</Base>

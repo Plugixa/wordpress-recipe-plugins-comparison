@@ -1,0 +1,34 @@
+sections:
+  - id: who
+    h: Qui gère ce site
+    p:
+      - "Ce comparatif est tenu à jour par Plugixa, la société qui édite Plugixa Recipe, l'un des plugins comparés. C'est un conflit d'intérêts, et cette page explique ce que nous faisons pour y répondre."
+      - "Chaque page porte une mention indiquant qui gère le site. Notre plugin est signalé dans les tableaux. Il n'est placé en tête d'un classement que là où les données vérifiées le justifient, et sa page liste ses points faibles de la même manière que celle de tous les autres plugins."
+  - id: sources
+    h: "D'où viennent les valeurs"
+    p:
+      - "Pour les plugins concurrents, chaque valeur provient des supports de l'éditeur lui-même, c'est-à-dire sa fiche wordpress.org, ses pages de fonctionnalités et sa page de tarifs. Chaque valeur vérifiée d'un tableau renvoie à la page dont elle est tirée."
+      - "Pour Plugixa Recipe, les valeurs proviennent de la lecture du code source du plugin. Nous avons appliqué les mêmes définitions, ce qui explique que plusieurs fonctionnalités soient marquées « Non » ou « Partiel » alors même que le plugin enregistre des données liées."
+      - "Le nombre d'installations, les notes, les numéros de version et les dates de mise à jour sont lus par un script via l'API publique des plugins de wordpress.org, et non saisis à la main."
+  - id: labels
+    h: Ce que signifient les libellés
+    p:
+      - "« Oui » signifie que le plugin fait ce que dit la définition de la fonctionnalité. « Partiel » signifie qu'il en fait une partie, et une note précise ce qui manque. « Non » signifie qu'il ne le fait pas. « Non vérifié » signifie que nous n'avons pas pu confirmer la valeur à partir des pages de l'éditeur, nous n'affirmons donc rien."
+      - "« Gratuit » signifie que la fonctionnalité est dans la version disponible sur wordpress.org. « Payant » nomme la formule la moins chère qui l'inclut, d'après ce qu'indique l'éditeur."
+      - "« Non vérifié » n'est pas un « Non » poli. Beaucoup de ces fonctionnalités existent probablement. Nous préférons laisser un blanc plutôt que deviner."
+  - id: limits
+    h: "Ce que nous n'avons pas fait"
+    p:
+      - "Nous n'avons pas installé et testé chaque plugin à la main, et nous n'avons pas réalisé de tests de vitesse. Les valeurs reflètent ce que les éditeurs disent de leurs propres produits."
+      - "Il n'y a ni score global ni note par étoiles de notre part. Les notes affichées sont les notes publiques de wordpress.org, accompagnées du nombre de notes."
+      - "Les prix sont ceux affichés le jour de notre vérification. Lorsqu'un éditeur affichait un prix promotionnel, nous indiquons aussi le prix normal."
+  - id: rankings
+    h: Comment sont établis les classements et les sélections
+    p:
+      - "Les pages de sélection classent les plugins pour un besoin précis et annoncé. Chaque choix est accompagné d'une raison vérifiable dans le tableau des fonctionnalités."
+      - "Nous regardons ce que comprend la version gratuite, le prix par site, la date de la dernière mise à jour du plugin, ainsi que sa note publique et son nombre d'installations."
+  - id: corrections
+    h: Corrections
+    p:
+      - "Si une valeur est erronée ou obsolète, ouvrez une issue sur le dépôt GitHub avec un lien vers la page de l'éditeur qui montre la bonne valeur. Les éditeurs sont invités à le faire pour leurs propres plugins."
+      - "Les données et les textes sont publiés sous licence CC BY 4.0, vous pouvez donc les réutiliser en citant la source."

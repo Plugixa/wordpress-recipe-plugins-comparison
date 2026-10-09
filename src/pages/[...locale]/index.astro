@@ -1,0 +1,97 @@
+---
+import Base from "../../layouts/Base.astro";
+import ComparisonTable from "../../components/ComparisonTable.astro";
+import ProductCard from "../../components/ProductCard.astro";
+import { LOCALES, content, fmt, href, localeParam, formatDate, type Locale } from "../../lib/i18n";
+import { getFeatures, getPagesConfig, getProduct, getProducts, lastChecked } from "../../lib/data";
+import { alternativesMeta, compareMeta, guideMeta, homeMeta, paths } from "../../lib/pages";
+import { faqLd, itemListLd } from "../../lib/seo";
+
+export function getStaticPaths() {
+  return LOCALES.map((locale) => ({ params: { locale: localeParam(locale) }, props: { locale } }));
+}
+
+const { locale } = Astro.props as { locale: Locale };
+const ui = content(locale, "ui");
+const guides = content(locale, "guides");
+const faq = content(locale, "faq").items as { q: string; a: string }[];
+const products = getProducts();
+const cfg = getPagesConfig();
+const meta = homeMeta(locale);
+const vars = { n: products.length, features: getFeatures().length };
+
+const compareLinks = cfg.compare.map((c) => compareMeta(locale, getProduct(c.a), getProduct(c.b)));
+const guideLinks = cfg.guides.map((g) => ({ meta: guideMeta(locale, g.slug), nav: guides[g.slug].nav }));
+const alternativeLinks = cfg.alternatives.map((e) => alternativesMeta(locale, e.target));
+---
+
+<Base locale={locale} meta={meta} wide jsonld={[itemListLd(locale, meta.h1, products), faqLd(faq)]}>
+  <section class="hero">
+    <h1>{meta.h1}</h1>
+    <p class="lead">{fmt(ui.home.lead, vars)}</p>
+    <div class="actions">
+      <a class="btn" href="#table">{ui.home.cta_table}</a>
+      <a class="btn ghost" href={href(locale, paths.methodology())}>{ui.home.cta_method}</a>
+    </div>
+    <p class="small muted">{fmt(ui.footer.checked, { date: formatDate(lastChecked(), locale) })}</p>
+  </section>
+
+  <section id="plugins" aria-labelledby="plugins-h">
+    <h2 id="plugins-h">{ui.home.picks_title}</h2>
+    <p class="prose">{ui.home.picks_lead}</p>
+    <ul class="grid">
+      {products.map((p) => <li style="display:contents"><ProductCard locale={locale} product={p} /></li>)}
+    </ul>
+  </section>
+
+  <section id="table" aria-labelledby="table-h">
+    <h2 id="table-h">{ui.home.table_title}</h2>
+    <ComparisonTable locale={locale} products={products} />
+  </section>
+
+  <section id="versus" aria-labelledby="versus-h">
+    <h2 id="versus-h">{ui.home.compare_title}</h2>
+    <ul class="link-list">
+      {compareLinks.map((m) => <li><a href={href(locale, m.path)}>{m.h1}</a></li>)}
+    </ul>
+  </section>
+
+  <section id="guides" aria-labelledby="guides-h">
+    <h2 id="guides-h">{ui.home.guides_title}</h2>
+    <ul class="link-list">
+      {guideLinks.map((g) => <li><a href={href(locale, g.meta.path)}>{g.nav}</a></li>)}
+    </ul>
+    <h3>{ui.home.alternatives_title}</h3>
+    <ul class="link-list">
+      {alternativeLinks.map((m) => <li><a href={href(locale, m.path)}>{m.h1}</a></li>)}
+    </ul>
+  </section>
+
+  <section id="legacy" aria-labelledby="legacy-h">
+    <h2 id="legacy-h">{ui.home.legacy_title}</h2>
+    <p class="prose">{ui.home.legacy_lead}</p>
+    <ul class="prose">
+      {
+        cfg.legacy.map((l) => (
+          <li>
+            <a href={l.source} rel="noopener nofollow">{l.name}</a>: {ui.home.legacy_reason[l.reason]}
+            ({fmt(l.reason === "at_risk" ? ui.home.legacy_checked : ui.home.legacy_since, { date: formatDate(l.date, locale) })}).
+            {l.slug === "zip-recipes" && <a href={href(locale, paths.alternatives(l.slug))}>{alternativesMeta(locale, l.slug).h1}</a>}
+          </li>
+        ))
+      }
+    </ul>
+  </section>
+
+  <section id="faq" class="faq" aria-labelledby="faq-h">
+    <h2 id="faq-h">{ui.home.faq_title}</h2>
+    {
+      faq.map((item) => (
+        <details>
+          <summary>{item.q}</summary>
+          <p>{item.a}</p>
+        </details>
+      ))
+    }
+  </section>
+</Base>

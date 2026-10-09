@@ -1,0 +1,24 @@
+{
+  "name": "wordpress-recipe-plugins-comparison",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Sourced comparison of WordPress recipe plugins.",
+  "license": "MIT",
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "wporg": "tsx scripts/fetch-wporg.ts",
+    "readme": "tsx scripts/build-readme.ts"
+  },
+  "devDependencies": {
+    "@astrojs/sitemap": "^3.7.4",
+    "astro": "^7.3.8",
+    "tsx": "^4.23.15",
+    "yaml": "^2.9.1"
+  }
+}

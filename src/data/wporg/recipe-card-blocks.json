@@ -1,0 +1,16 @@
+{
+  "slug": "recipe-card-blocks-by-wpzoom",
+  "api_url": "https://api.wordpress.org/plugins/info/1.2/?action=plugin_information&request[slug]=recipe-card-blocks-by-wpzoom",
+  "fetched_at": "2026-10-09",
+  "listed": true,
+  "name": "Recipe Card Blocks Lite",
+  "version": "3.6.2",
+  "active_installs": 10000,
+  "rating": 4.8,
+  "num_ratings": 20,
+  "last_updated": "2026-10-06",
+  "added": "2018-08-18",
+  "requires_wp": "6.5",
+  "requires_php": "7.4",
+  "tested_up_to": "7.1.3"
+}

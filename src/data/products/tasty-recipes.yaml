@@ -1,0 +1,54 @@
+slug: tasty-recipes
+name: Tasty Recipes
+vendor: WP Tasty
+own: false
+kind: card
+order: 7
+wporg_slug: tasty-recipes-lite
+homepage: https://www.wptasty.com/tasty-recipes
+verified_at: 2026-10-09
+version_checked: "1.2.10"
+sources:
+  wporg: { url: "https://wordpress.org/plugins/tasty-recipes-lite/", method: docs }
+  pricing: { url: "https://www.wptasty.com/pricing-recipes", method: docs }
+pricing:
+  source: pricing
+  currency: USD
+  free: true
+  lifetime: false
+  refund: days_14
+  tiers:
+    - { name: Basic, price: 49, regular: 99, period: year, sites: "1" }
+    - { name: Plus, price: 99, regular: 149, period: year, sites: "3" }
+    - { name: Pro, price: 199, regular: 249, period: year, sites: "5" }
+features:
+  schema.jsonld: { value: yes, tier: free, src: wporg }
+  schema.guided: { value: yes, tier: free, src: wporg }
+  editors.gutenberg: { value: yes, tier: free, src: wporg }
+  editors.classic: { value: yes, tier: free, src: wporg }
+  editors.elementor: { value: yes, tier: free, src: wporg }
+  editors.shortcode: { value: unverified }
+  editors.card_in_post: { value: yes, tier: free, src: wporg }
+  editors.own_pages: { value: unverified }
+  design.templates: { text: true, src: wporg }
+  design.template_editor: { value: partial, tier: free, src: wporg, note: true }
+  ingredients.groups: { value: unverified }
+  ingredients.servings: { value: yes, tier: paid, tier_name: Basic, src: wporg }
+  ingredients.unit_conversion: { value: yes, tier: paid, tier_name: Basic, src: wporg }
+  ingredients.links: { value: yes, tier: free, src: wporg, note: true }
+  ingredients.equipment: { value: partial, tier: paid, tier_name: All Access, src: pricing, note: true }
+  instructions.step_media: { value: unverified }
+  instructions.timers: { value: unverified }
+  nutrition.label: { value: yes, tier: paid, tier_name: Basic, src: wporg }
+  nutrition.auto: { value: partial, tier: paid, tier_name: Nutrifox, src: wporg, note: true }
+  readers.ratings: { value: yes, tier: free, src: wporg, note: true }
+  readers.print: { value: yes, tier: free, src: wporg }
+  readers.jump: { value: yes, tier: free, src: wporg }
+  readers.cook_mode: { value: yes, tier: paid, tier_name: Basic, src: wporg }
+  readers.favorites: { value: partial, tier: paid, tier_name: Basic, src: wporg, note: true }
+  readers.planner: { value: unverified }
+  site.index_search: { value: unverified }
+  site.submissions: { value: unverified }
+  site.multilingual: { value: unverified }
+  extras.importers: { text: true, src: wporg }
+  extras.ai: { value: no, src: wporg, note: true }

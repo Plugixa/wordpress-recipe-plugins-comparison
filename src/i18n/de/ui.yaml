@@ -1,0 +1,176 @@
+site:
+  name: WordPress Rezept-Plugins im Vergleich
+  short: Rezept-Plugins im Vergleich
+  tagline: Belegte und datierte Fakten zu WordPress Rezept-Plugins.
+nav:
+  home: Vergleich
+  plugins: Plugins
+  compare: Direktvergleiche
+  guides: Bestenlisten
+  methodology: Methodik
+  language: Sprache
+  theme: Zwischen hellem und dunklem Design wechseln
+  skip: Zum Inhalt springen
+disclosure:
+  text: Dieser Vergleich wird von Plugixa gepflegt, dem Hersteller von Plugixa Recipe.
+  link: Wie wir damit umgehen
+footer:
+  checked: "Daten zuletzt geprüft am {date}."
+  license: "Daten und Texte: CC BY 4.0. Code: MIT."
+  correction: Einen falschen Wert gefunden? Korrektur melden.
+  trademarks: Die Plugin-Namen sind Marken ihrer jeweiligen Inhaber. Diese Website steht in keiner Verbindung zu ihnen.
+breadcrumb:
+  home: Startseite
+  plugins: Plugins
+  compare: Direktvergleiche
+  alternatives: Alternativen
+  guides: Bestenlisten
+values:
+  "yes": "Ja"
+  partial: Teilweise
+  "no": "Nein"
+  unverified: Nicht geprüft
+  free: Kostenlos
+  paid: "Kostenpflichtig: {tier}"
+  addon: Kostenpflichtiges Add-on
+  source: Quelle
+legend:
+  title: So lesen Sie die Tabelle
+  "yes": Das Plugin kann das.
+  partial: Das Plugin kann das nur zum Teil. Die Anmerkung nennt, was fehlt.
+  "no": Das Plugin kann das nicht.
+  unverified: Wir konnten es anhand der Seiten des Anbieters nicht bestätigen und treffen deshalb keine Aussage.
+table:
+  caption: "Funktionsvergleich von {n} WordPress Rezept-Plugins"
+  feature: Funktion
+  products: Plugins
+  area: Bereich
+  all_areas: Alle Bereiche
+  only_diff: Nur Unterschiede zwischen den Plugins
+  hide_unchecked: Zeilen ohne geprüften Wert ausblenden
+  reset: Zurücksetzen
+  status: "{rows} von {total} Funktionen, {cols} von {all} Plugins"
+  scroll_hint: Scrollen Sie seitwärts, um weitere Plugins zu sehen, oder wählen Sie oben einige ab.
+  checked: "{n} von {total} geprüft"
+  ours: Unser Plugin
+kind:
+  card: Rezeptkarten-Plugin
+  database: Plugin für Rezept-Websites
+stats:
+  title: Zahlen von wordpress.org
+  note: "Abgerufen über die Plugin-API von wordpress.org am {date}."
+  installs: Aktive Installationen
+  installs_value: "{n}+"
+  installs_new: Weniger als 10
+  rating: Bewertung
+  rating_value: "{rating} / 5 ({count} Bewertungen)"
+  rating_none: Noch keine Bewertungen
+  version: Aktuelle Version
+  updated: Zuletzt aktualisiert
+  listed_since: Auf wordpress.org seit
+  requires: Voraussetzungen
+  requires_value: "WordPress {wp}, PHP {php}"
+  tested: Getestet bis
+  vendor: Entwickler
+  type: Typ
+pricing:
+  title: Preise
+  free: Kostenlose Version
+  free_yes: "Ja"
+  plan: Tarif
+  price: Preis
+  sites: Websites
+  sites_value: "{n}"
+  unlimited: Unbegrenzt
+  per_year: "{price} / Jahr"
+  lifetime: "{price} einmalig (Lifetime)"
+  renews: "Verlängerung für {price}"
+  promo_note: Preise, bei denen eine teurere Verlängerung angegeben ist, waren am Tag unserer Prüfung Aktionspreise.
+  from: "Ab {price} / Jahr"
+  free_only: Kostenlos
+  lifetime_option: Lifetime-Lizenz
+  available: Verfügbar
+  not_listed: Nicht angegeben
+  refund: Rückerstattung
+  refund_days_30: 30 Tage Geld-zurück-Garantie
+  refund_days_14: 14 Tage Geld-zurück-Garantie
+  refund_defect_14: 14 Tage Rückerstattung, nur bei Mängeln
+  refund_unknown: Auf der Preisseite nicht angegeben
+  source: Quelle der Preise
+home:
+  title: "Beste WordPress Rezept-Plugins im Vergleich ({year}): {n} Plugins"
+  description: "{n} WordPress Rezept-Plugins, geprüft auf dieselben {features} Funktionen. Mit Preisen, Zahlen von wordpress.org und Quellenlink zu jedem Wert."
+  h1: WordPress Rezept-Plugins im Vergleich, mit Quellen
+  lead: "{n} Rezept-Plugins, geprüft auf dieselben {features} Funktionen. Jeder Wert verlinkt auf die Seite, von der er stammt, und trägt das Datum unserer Prüfung. Wo wir etwas nicht bestätigen konnten, steht das in der Zelle."
+  cta_table: Zur vollständigen Tabelle
+  cta_method: So prüfen wir
+  picks_title: Welches Plugin für welchen Zweck
+  picks_lead: Das eine beste Rezept-Plugin gibt es nicht. Dies sind die Empfehlungen, die wir mit den Daten weiter unten begründen können.
+  table_title: Vollständige Funktionstabelle
+  plugins_title: Die Plugins
+  compare_title: Direktvergleiche
+  guides_title: Bestenlisten
+  alternatives_title: Alternativen
+  faq_title: Häufig gestellte Fragen
+  legacy_title: Plugins, die wir für neue Websites nicht empfehlen
+  legacy_lead: Diese Plugins sind auf wordpress.org geschlossen oder werden allem Anschein nach nicht mehr gepflegt. Wenn Sie eines davon noch einsetzen, sollten Sie einen Umzug planen.
+  legacy_reason:
+    author: Auf wordpress.org auf Wunsch des Autors geschlossen
+    guideline: Auf wordpress.org wegen eines Richtlinienverstoßes geschlossen
+    security: Auf wordpress.org wegen eines Sicherheitsproblems geschlossen
+    at_risk: Die Website des Anbieters hat ein abgelaufenes Zertifikat und eine defekte Preisseite
+  legacy_since: "seit {date}"
+  legacy_checked: "geprüft am {date}"
+plugin:
+  title: "{name} im Überblick ({year}): Funktionen, Preise, Vor- und Nachteile"
+  h1: "{name} im Überblick"
+  best_for: Am besten geeignet für
+  pros: Stärken
+  cons: Schwächen
+  features_title: Funktionen nach Bereich
+  compare_title: "{name} im Vergleich"
+  alternatives_link: "Alternativen zu {name}"
+  website: Offizielle Website
+  wporg: Eintrag auf wordpress.org
+  version_checked: "Geprüfte Version: {version}"
+  screenshots: Screenshots
+  cta_title: Plugixa Recipe ausprobieren
+  cta_text: Die kostenlose Version finden Sie auf wordpress.org. Ein Konto oder ein Lizenzschlüssel ist nicht nötig.
+  cta_wporg: Auf wordpress.org herunterladen
+  cta_site: Pro-Funktionen ansehen
+  col_feature: Funktion
+  col_value: Wert
+  col_note: Anmerkung
+  status_title: Status
+compare:
+  title: "{a} vs {b} ({year}): Funktionen und Preise"
+  description: "{a} vs {b}: {features} Funktionen im Vergleich, {both} bei beiden geprüft, {differ} Unterschiede. Mit Preisen, Quellen und Empfehlung."
+  h1: "{a} vs {b}"
+  stats: "Für {both} von {features} Funktionen liegt bei beiden Plugins ein geprüfter Wert vor. Bei {differ} davon unterscheiden sie sich."
+  at_a_glance: Auf einen Blick
+  choose: "Wählen Sie {name}, wenn"
+  verdict: Fazit
+  table_title: Funktion für Funktion
+  more: Weitere Vergleiche
+alternatives:
+  title: "{name} Alternativen ({year}): die {n} besten im Vergleich"
+  h1: "Alternativen zu {name}"
+  why: Warum Nutzer nach einer Alternative suchen
+  picks: Die Alternativen
+  migrate: Rezepte umziehen
+  read_review: "Zum Überblick über {name}"
+  compare_with: "{a} vs {b}"
+guide:
+  picks: Unsere Empfehlungen
+  how: So haben wir ausgewählt
+  read_review: Zum ausführlichen Überblick
+  table_title: Die Empfehlungen im direkten Vergleich
+methodology:
+  title: "Methodik: So werden die Werte der Rezept-Plugins belegt und geprüft"
+  description: Wer diesen Vergleich betreibt, woher jeder Wert stammt, was die Kennzeichnungen bedeuten und wie Sie einen Fehler melden.
+  h1: Methodik
+  features_title: Definitionen der Funktionen
+notfound:
+  title: Seite nicht gefunden
+  text: Diese Seite gibt es nicht.
+  back: Zurück zum Vergleich

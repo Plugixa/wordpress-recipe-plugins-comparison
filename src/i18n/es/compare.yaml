@@ -1,0 +1,122 @@
+# One entry per pair in src/data/pages.yaml, keyed "{a}-vs-{b}".
+plugixa-recipe-vs-wp-recipe-maker:
+  intro:
+    - Estos dos plugins resuelven problemas distintos. WP Recipe Maker coloca una tarjeta de receta dentro de una entrada del blog. Plugixa Recipe guarda las recetas como páginas propias y construye listados, archivos y búsqueda a su alrededor.
+    - WP Recipe Maker es la opción consolidada, con más de 50.000 instalaciones activas. Plugixa Recipe es nuevo y todavía no tiene base de instalaciones.
+  choose_a:
+    - Las recetas son el contenido principal de tu sitio y quieres un directorio explorable con categorías, tipos de cocina y búsqueda.
+    - Quieres que los visitantes envíen recetas sin pagar por el plan más alto.
+    - Quieres un único plan de pago que cubra sitios ilimitados.
+  choose_b:
+    - Escribes entradas de blog y quieres una tarjeta de receta debajo de cada una, con un botón de ir a la receta.
+    - Necesitas el schema de recetas en JSON-LD sin pagar.
+    - Necesitas modo cocina, conversión de unidades, temporizadores o información nutricional calculada con una base de datos de alimentos.
+    - Vas a migrar desde otro plugin de recetas y necesitas un importador.
+  verdict: Para un blog de cocina, elige WP Recipe Maker; hace más cosas y su versión gratuita ya cubre el schema y las plantillas. Plugixa Recipe encaja cuando vas a crear un directorio de recetas o una sección de recetas comunitaria y quieres envíos, reseñas y listados gratis.
+
+plugixa-recipe-vs-recipe-card-blocks:
+  intro:
+    - Recipe Card Blocks es una tarjeta de receta para el editor de bloques. Plugixa Recipe es una base de datos de recetas con sus propias páginas y listados.
+    - Recipe Card Blocks tiene más de 10.000 instalaciones activas. Plugixa Recipe es nuevo.
+  choose_a:
+    - Quieres las recetas como páginas independientes con archivos y filtros, no como tarjetas dentro de las entradas.
+    - Quieres envíos de visitantes y un índice de recetas sin un plan de pago.
+    - Usas el editor clásico; Recipe Card Blocks no es compatible con él.
+  choose_b:
+    - Trabajas con el editor de bloques y quieres una tarjeta de receta dentro de cada entrada.
+    - Quieres schema JSON-LD y modo cocina gratis.
+    - Necesitas información nutricional calculada con una base de datos de alimentos o conversión de unidades.
+    - Necesitas licencias para hasta 10 sitios y quieres el precio más bajo para ello.
+  verdict: Recipe Card Blocks es la mejor elección para un blog de cocina hecho con el editor de bloques. Plugixa Recipe es la mejor elección cuando necesitas un índice de recetas y envíos de visitantes y no quieres pagar por ellos.
+
+plugixa-recipe-vs-create:
+  intro:
+    - Create es un plugin de tarjetas para recetas, tutoriales y listas. Plugixa Recipe es una base de datos de recetas con sus propias páginas.
+    - Create tiene unas 6.000 instalaciones activas y es independiente de Mediavine desde mediados de 2025. Plugixa Recipe es nuevo.
+  choose_a:
+    - Quieres un directorio de recetas con archivos, búsqueda y envíos de visitantes.
+    - Quieres raciones ajustables sin un plan de pago.
+    - Quieres un precio de pago más bajo; Create Pro cuesta $150 al año para un sitio.
+  choose_b:
+    - Quieres la información nutricional calculada automáticamente sin coste.
+    - Quieres tarjetas de receta, tarjetas de tutorial y listas recopilatorias dentro de las entradas del blog.
+    - Necesitas schema JSON-LD gratis.
+    - Vas a migrar desde otro plugin; Create importa desde 11.
+  verdict: Create es la opción gratuita más sólida para un blog que necesita schema y valores nutricionales. Plugixa Recipe encaja en un sitio organizado en torno a una colección de recetas, donde los listados y los envíos importan más que una tarjeta en una entrada.
+
+plugixa-recipe-vs-wp-delicious:
+  intro:
+    - Esta es la comparativa más reñida del sitio. Los dos plugins dan a cada receta su propia página y los dos incluyen índice de recetas, búsqueda y favoritos en la versión gratuita.
+    - WP Delicious tiene unas 4.000 instalaciones activas, seis años de historia y una valoración alta. Plugixa Recipe es nuevo.
+  choose_a:
+    - Quieres el envío de recetas por parte de los visitantes gratis; WP Delicious lo incluye en Pro.
+    - Quieres las recetas fuera de la tabla de entradas de WordPress, en tablas dedicadas con una REST API.
+    - Quieres compatibilidad declarada con WPML y Polylang.
+    - Quieres un diseño que no dependa de un tema complementario.
+  choose_b:
+    - Necesitas schema JSON-LD gratis.
+    - Quieres un bloque de tarjeta de receta dentro de las entradas, además de las páginas de receta.
+    - Quieres pagar una sola vez; WP Delicious vende una licencia de por vida.
+    - Quieres un plugin con trayectoria y reseñas ya publicadas.
+    - Construyes con Elementor y quieres muchos widgets.
+  verdict: WP Delicious es hoy la opción más segura porque está probado y su versión gratuita incluye JSON-LD. Plugixa Recipe merece la pena si lo que más te importa son los envíos de visitantes gratuitos, o si quieres las recetas guardadas en sus propias tablas.
+
+plugixa-recipe-vs-cooked:
+  intro:
+    - Los dos plugins se orientan más a sitios de recetas que a entradas de blog, y los dos son generosos en la versión gratuita.
+    - Cooked data de 2013, tiene unas 3.000 instalaciones activas y ahora lo mantiene un nuevo propietario. Plugixa Recipe es nuevo.
+  choose_a:
+    - Quieres valoraciones, recetas guardadas y envíos de visitantes gratis; Cooked incluye las tres cosas en Pro.
+    - Quieres un bloque y un widget de Elementor para los listados.
+    - Quieres un editor visual para los diseños de listado.
+  choose_b:
+    - Quieres temporizadores en los pasos y una vista de cocina a pantalla completa gratis.
+    - Quieres la información nutricional calculada con la base de datos de Edamam.
+    - Quieres un sistema de plantillas basado en shortcodes que puedas reestructurar tú mismo.
+  verdict: Cooked da gratis más herramientas de cocina al lector. Plugixa Recipe da gratis más a un sitio comunitario, porque las valoraciones, las recetas guardadas y los envíos no requieren un plan de pago. Revisa las reseñas recientes de Cooked antes de decidir, porque las más antiguas son dispares.
+
+plugixa-recipe-vs-tasty-recipes:
+  intro:
+    - Tasty Recipes es una tarjeta de receta para entradas de blog, parte de la suite de WP Tasty. Plugixa Recipe es una base de datos de recetas con sus propias páginas y listados.
+    - Tasty Recipes es un plugin de pago veterano cuya edición gratuita Lite llegó en 2025. Plugixa Recipe es nuevo.
+  choose_a:
+    - Quieres un directorio de recetas con archivos, búsqueda y envíos de visitantes.
+    - Quieres etiqueta nutricional y raciones ajustables gratis.
+    - Quieres sitios ilimitados por un precio anual bajo.
+  choose_b:
+    - Quieres una tarjeta de receta dentro de cada entrada, con enlaces para ir a la receta y para imprimir.
+    - Necesitas JSON-LD y marcado de Guided Recipes gratis.
+    - Quieres modo cocina, conversión de unidades y enlaces de Instacart.
+    - Ya usas Tasty Links, Tasty Pins o Tasty Roundups.
+  verdict: Tasty Recipes encaja mejor con un bloguero que quiere una tarjeta sencilla y el resto de las herramientas de WP Tasty. Plugixa Recipe encaja mejor con un sitio construido en torno a una colección de recetas.
+
+wp-recipe-maker-vs-tasty-recipes:
+  intro:
+    - Estos son los dos plugins de tarjetas de receta más conocidos para blogs de cocina. Ahora los dos tienen versión gratuita en wordpress.org, y los dos incluyen gratis JSON-LD y marcado de Guided Recipes.
+    - WP Recipe Maker tiene más de 50.000 instalaciones activas. Tasty Recipes no publica cifras de instalaciones de pago; su edición gratuita Lite tiene unas 2.000.
+  choose_a:
+    - Quieres el mayor número de funciones en la versión gratuita, incluidos un editor de plantillas y fotos en los pasos.
+    - Necesitas la información nutricional calculada dentro del plugin.
+    - Quieres colecciones, planificación de menús o envíos de visitantes.
+    - Quieres un plazo de reembolso de 30 días y precios publicados que no eran ofertas de lanzamiento.
+  choose_b:
+    - Prefieres un mismo conjunto de funciones en todos los planes de pago, sin niveles de funciones que comparar.
+    - Quieres enlaces de afiliado en las tarjetas gratis.
+    - Piensas usar Tasty Links, Tasty Pins y Tasty Roundups juntos.
+    - Necesitas tres o cinco sitios y quieres un solo plan para ello.
+  verdict: WP Recipe Maker ofrece más, tanto gratis como de pago, y es la opción por defecto. Tasty Recipes tiene sentido si valoras los planes sencillos y quieres el resto de la suite de WP Tasty. Compara el precio de renovación, no el del primer año, porque los precios publicados de Tasty eran de lanzamiento.
+
+wp-delicious-vs-wp-recipe-maker:
+  intro:
+    - WP Delicious crea un sitio de recetas, con páginas de receta, un índice y cuentas de usuario. WP Recipe Maker crea tarjetas de receta para entradas de blog y añade funciones de sitio en sus planes superiores.
+    - WP Recipe Maker tiene más de 50.000 instalaciones activas; WP Delicious tiene unas 4.000. Los dos tienen valoraciones altas.
+  choose_a:
+    - Quieres un índice de recetas, búsqueda avanzada y favoritos sin pagar.
+    - Quieres una licencia de por vida.
+    - Quieres envíos de visitantes por menos dinero; están en WP Delicious Pro por $59, frente a los $149 de WP Recipe Maker Elite.
+  choose_b:
+    - Quieres la lista de importadores más amplia y un editor de plantillas gratuito.
+    - Necesitas cálculo nutricional y conversión de unidades confirmados y documentados.
+    - Quieres un diseño que no dependa de un tema complementario.
+    - Quieres el marcado de Guided Recipes confirmado como gratuito.
+  verdict: Elige WP Recipe Maker para un blog en el que la tarjeta de receta es la necesidad principal. Elige WP Delicious para crear un sitio de recetas con índice y cuentas con poco presupuesto, sobre todo si quieres pagar una sola vez.

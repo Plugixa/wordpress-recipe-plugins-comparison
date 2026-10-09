@@ -1,0 +1,34 @@
+sections:
+  - id: who
+    h: Who runs this site
+    p:
+      - This comparison is maintained by Plugixa, the company that makes Plugixa Recipe, one of the plugins compared. That is a conflict of interest, and this page explains what we do about it.
+      - Every page carries a notice saying who maintains the site. Our plugin is marked in the tables. It is listed first in a ranking only where the checked data supports that, and its page lists its weaknesses in the same way as every other plugin's.
+  - id: sources
+    h: Where the values come from
+    p:
+      - For competing plugins, each value comes from the vendor's own material, meaning its wordpress.org listing, its feature pages and its pricing page. Each checked value in a table links to the page it was taken from.
+      - For Plugixa Recipe, values come from reading the plugin's source code. We applied the same definitions, which is why several features are marked "No" or "Partial" even though the plugin stores related data.
+      - Install counts, ratings, version numbers and update dates are read from the public wordpress.org plugin API by a script, not typed in by hand.
+  - id: labels
+    h: What the labels mean
+    p:
+      - '"Yes" means the plugin does what the feature definition says. "Partial" means it does part of it, and a note says what is missing. "No" means it does not. "Not checked" means we could not confirm the value from the vendor''s own pages, so we make no claim.'
+      - '"Free" means the feature is in the version on wordpress.org. "Paid" names the lowest tier that includes it, as far as the vendor states.'
+      - '"Not checked" is not a polite "No". Many of those features probably exist. We would sooner leave a gap than guess.'
+  - id: limits
+    h: What we did not do
+    p:
+      - We did not install and test every plugin by hand, and we did not run speed tests. Values reflect what vendors say about their own products.
+      - There is no overall score and no star rating from us. The ratings shown are the public wordpress.org ratings, with the number of ratings beside them.
+      - Prices are the ones shown on the day we checked. Where a vendor showed a promotional price, we give the regular price too.
+  - id: rankings
+    h: How rankings and picks are decided
+    p:
+      - Best-of pages rank plugins for one stated need. Each pick has a reason that can be checked against the feature table.
+      - We look at what the free version includes, the price per site, how recently the plugin was updated, and its public rating and install count.
+  - id: corrections
+    h: Corrections
+    p:
+      - If a value is wrong or out of date, open an issue on the GitHub repository with a link to the vendor page that shows the correct value. Vendors are welcome to do this for their own plugins.
+      - Data and text are published under CC BY 4.0, so you may reuse them with attribution.

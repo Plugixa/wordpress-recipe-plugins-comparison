@@ -1,0 +1,163 @@
+---
+import "../styles/global.css";
+import { LOCALES, LOCALE_NAMES, OG_LOCALES, DEFAULT_LOCALE, content, fmt, href, asset, formatDate, type Locale } from "../lib/i18n";
+import { lastChecked } from "../lib/data";
+import { paths, REPO_URL, type PageMeta } from "../lib/pages";
+import { absUrl, breadcrumbLd, webPageLd, type Crumb } from "../lib/seo";
+
+interface Props {
+  locale: Locale;
+  meta: PageMeta;
+  crumbs?: Crumb[];
+  jsonld?: object[];
+  /** ISO date of the newest fact on the page. */
+  modified?: string;
+  noindex?: boolean;
+  wide?: boolean;
+}
+
+const { locale, meta, crumbs = [], jsonld = [], modified = lastChecked(), noindex = false, wide = false } = Astro.props;
+const ui = content(locale, "ui");
+const canonical = absUrl(locale, meta.path);
+const ogImage = new URL(asset(`og/${locale}/${meta.ogKey}.png`), Astro.site).href;
+const verification = import.meta.env.PUBLIC_GSC_VERIFICATION;
+
+const ld = [
+  webPageLd(locale, meta.path, meta.title, meta.description, modified),
+  ...(crumbs.length ? [breadcrumbLd(locale, crumbs, meta.path)] : []),
+  ...jsonld,
+];
+
+const nav = [
+  { label: ui.nav.home, url: href(locale, paths.home()), current: meta.path === paths.home() },
+  { label: ui.nav.plugins, url: `${href(locale, paths.home())}#plugins` },
+  { label: ui.nav.compare, url: `${href(locale, paths.home())}#versus` },
+  { label: ui.nav.guides, url: `${href(locale, paths.home())}#guides` },
+  { label: ui.nav.methodology, url: href(locale, paths.methodology()), current: meta.path === paths.methodology() },
+];
+---
+
+<!doctype html>
+<html lang={locale}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{meta.title}</title>
+    <meta name="description" content={meta.description} />
+    <meta name="robots" content={noindex ? "noindex, follow" : "index, follow, max-snippet:-1, max-image-preview:large"} />
+    <link rel="canonical" href={canonical} />
+    {LOCALES.map((l) => <link rel="alternate" hreflang={l} href={absUrl(l, meta.path)} />)}
+    <link rel="alternate" hreflang="x-default" href={absUrl(DEFAULT_LOCALE, meta.path)} />
+    <link rel="icon" href={asset("favicon.svg")} type="image/svg+xml" />
+    <link rel="sitemap" href={asset("sitemap-index.xml")} />
+    <meta name="theme-color" content="#a83a0b" />
+    {verification && <meta name="google-site-verification" content={verification} />}
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content={ui.site.name} />
+    <meta property="og:locale" content={OG_LOCALES[locale]} />
+    {LOCALES.filter((l) => l !== locale).map((l) => <meta property="og:locale:alternate" content={OG_LOCALES[l]} />)}
+    <meta property="og:title" content={meta.title} />
+    <meta property="og:description" content={meta.description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="article:modified_time" content={modified} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={meta.title} />
+    <meta name="twitter:description" content={meta.description} />
+    <meta name="twitter:image" content={ogImage} />
+
+    {ld.map((item) => <script type="application/ld+json" set:html={JSON.stringify(item)} />)}
+
+    <script is:inline>
+      try {
+        const t = localStorage.getItem("theme");
+        if (t === "light" || t === "dark") document.documentElement.dataset.theme = t;
+      } catch {}
+    </script>
+  </head>
+  <body>
+    <a class="skip" href="#main">{ui.nav.skip}</a>
+    <div class="disclosure">
+      <div class:list={["wrap", { wide }]}>
+        {ui.disclosure.text}{" "}
+        <a href={`${href(locale, paths.methodology())}#who`}>{ui.disclosure.link}</a>
+      </div>
+    </div>
+    <header class="site-header">
+      <div class:list={["wrap", { wide }]}>
+        <a class="brand" href={href(locale, paths.home())}>{ui.site.short}</a>
+        <nav class="site-nav" aria-label={ui.site.short}>
+          {nav.map((n) => <a href={n.url} aria-current={n.current ? "page" : undefined}>{n.label}</a>)}
+        </nav>
+        <div class="tools">
+          <details class="lang">
+            <summary aria-label={ui.nav.language}>{LOCALE_NAMES[locale]} <span aria-hidden="true">▾</span></summary>
+            <ul>
+              {
+                LOCALES.map((l) => (
+                  <li>
+                    <a href={href(l, meta.path)} lang={l} hreflang={l} aria-current={l === locale ? "true" : undefined}>
+                      {LOCALE_NAMES[l]}
+                    </a>
+                  </li>
+                ))
+              }
+            </ul>
+          </details>
+          <button class="icon-btn" type="button" id="theme-toggle" aria-label={ui.nav.theme} title={ui.nav.theme}>
+            <span aria-hidden="true">◐</span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main id="main" class:list={["wrap", { wide }]}>
+      {
+        crumbs.length > 0 && (
+          <nav class="crumbs" aria-label="Breadcrumb">
+            <ol>
+              {crumbs.map((c) => (
+                <li>{c.path ? <a href={href(locale, c.path)}>{c.name}</a> : <span aria-current="page">{c.name}</span>}</li>
+              ))}
+            </ol>
+          </nav>
+        )
+      }
+      <slot />
+    </main>
+
+    <footer class="site-footer">
+      <div class:list={["wrap", { wide }]}>
+        <p>{fmt(ui.footer.checked, { date: formatDate(lastChecked(), locale) })} {ui.footer.license}</p>
+        <p>
+          <a href={`${REPO_URL}/issues/new`} rel="noopener">{ui.footer.correction}</a> ·
+          <a href={href(locale, paths.methodology())}>{ui.nav.methodology}</a> ·
+          <a href={REPO_URL} rel="noopener">GitHub</a>
+        </p>
+        <p>{ui.footer.trademarks}</p>
+      </div>
+    </footer>
+
+    <script>
+      const root = document.documentElement;
+      document.getElementById("theme-toggle")?.addEventListener("click", () => {
+        const dark = root.dataset.theme
+          ? root.dataset.theme === "dark"
+          : matchMedia("(prefers-color-scheme: dark)").matches;
+        root.dataset.theme = dark ? "light" : "dark";
+        try {
+          localStorage.setItem("theme", root.dataset.theme);
+        } catch {}
+      });
+      // Close the language menu when clicking elsewhere.
+      document.addEventListener("click", (e) => {
+        for (const d of document.querySelectorAll("details.lang[open]")) {
+          if (!d.contains(e.target as Node)) d.removeAttribute("open");
+        }
+      });
+    </script>
+  </body>
+</html>

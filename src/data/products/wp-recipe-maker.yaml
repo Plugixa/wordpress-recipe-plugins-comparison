@@ -1,0 +1,56 @@
+slug: wp-recipe-maker
+name: WP Recipe Maker
+vendor: Bootstrapped Ventures
+own: false
+kind: card
+order: 2
+wporg_slug: wp-recipe-maker
+homepage: https://bootstrapped.ventures/wp-recipe-maker/
+verified_at: 2026-10-09
+version_checked: "10.8.5"
+sources:
+  wporg: { url: "https://wordpress.org/plugins/wp-recipe-maker/", method: docs }
+  features: { url: "https://bootstrapped.ventures/wp-recipe-maker/free-vs-premium/", method: docs }
+  pro: { url: "https://bootstrapped.ventures/wp-recipe-maker/pro/", method: docs }
+  pricing: { url: "https://bootstrapped.ventures/wp-recipe-maker/get-the-plugin/", method: docs }
+pricing:
+  source: pricing
+  currency: USD
+  free: true
+  lifetime: false
+  refund: days_30
+  tiers:
+    - { name: Premium, price: 49, period: year, sites: "1" }
+    - { name: Pro, price: 99, period: year, sites: "1" }
+    - { name: Elite, price: 149, period: year, sites: "1" }
+features:
+  schema.jsonld: { value: yes, tier: free, src: wporg }
+  schema.guided: { value: yes, tier: free, src: wporg }
+  editors.gutenberg: { value: yes, tier: free, src: wporg }
+  editors.classic: { value: yes, tier: free, src: wporg }
+  editors.elementor: { value: yes, tier: free, src: wporg }
+  editors.shortcode: { value: yes, tier: free, src: wporg }
+  editors.card_in_post: { value: yes, tier: free, src: wporg }
+  editors.own_pages: { value: unverified }
+  design.templates: { text: true, src: features }
+  design.template_editor: { value: yes, tier: free, src: wporg }
+  ingredients.groups: { value: yes, tier: free, src: wporg }
+  ingredients.servings: { value: yes, tier: paid, tier_name: Premium, src: features }
+  ingredients.unit_conversion: { value: yes, tier: paid, tier_name: Pro, src: pro }
+  ingredients.links: { value: yes, tier: paid, tier_name: Premium, src: features }
+  ingredients.equipment: { value: yes, tier: paid, tier_name: Premium, src: features, note: true }
+  instructions.step_media: { value: yes, tier: free, src: wporg }
+  instructions.timers: { value: yes, tier: paid, tier_name: Premium, src: features }
+  nutrition.label: { value: yes, tier: paid, tier_name: Premium, src: features }
+  nutrition.auto: { value: yes, tier: paid, tier_name: Pro, src: pro, note: true }
+  readers.ratings: { value: yes, tier: free, src: wporg, note: true }
+  readers.print: { value: yes, tier: free, src: wporg }
+  readers.jump: { value: yes, tier: free, src: wporg }
+  readers.cook_mode: { value: yes, tier: paid, tier_name: Premium, src: features }
+  readers.favorites: { value: yes, tier: paid, tier_name: Premium, src: features }
+  readers.planner: { value: yes, tier: paid, tier_name: Elite, src: features }
+  site.index_search: { value: partial, tier: free, src: wporg, note: true }
+  site.submissions: { value: yes, tier: paid, tier_name: Elite, src: features }
+  site.multilingual: { value: unverified }
+  extras.importers: { text: true, src: wporg }
+  extras.ai: { value: unverified }

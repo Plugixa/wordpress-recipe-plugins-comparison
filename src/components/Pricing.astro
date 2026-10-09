@@ -1,0 +1,57 @@
+---
+import { content, fmt, formatPrice, type Locale } from "../lib/i18n";
+import type { Product } from "../lib/data";
+
+interface Props {
+  locale: Locale;
+  product: Product;
+}
+
+const { locale, product } = Astro.props;
+const ui = content(locale, "ui").pricing;
+const { pricing } = product;
+const money = (n: number) => formatPrice(n, pricing.currency, locale);
+const hasPromo = pricing.tiers.some((t) => t.regular);
+---
+
+<div class="table-wrap">
+  <table>
+    <thead>
+      <tr>
+        <th scope="col">{ui.plan}</th>
+        <th scope="col">{ui.price}</th>
+        <th scope="col">{ui.sites}</th>
+      </tr>
+    </thead>
+    <tbody>
+      {
+        pricing.free && (
+          <tr>
+            <th scope="row">{ui.free}</th>
+            <td>{money(0)}</td>
+            <td>–</td>
+          </tr>
+        )
+      }
+      {
+        pricing.tiers.map((t) => (
+          <tr>
+            <th scope="row">{t.name}</th>
+            <td>
+              {fmt(t.period === "year" ? ui.per_year : ui.lifetime, { price: money(t.price) })}
+              {t.regular && t.period === "year" && (
+                <span class="tier">{fmt(ui.renews, { price: money(t.regular) })}</span>
+              )}
+            </td>
+            <td>{t.sites === "unlimited" ? ui.unlimited : fmt(ui.sites_value, { n: t.sites })}</td>
+          </tr>
+        ))
+      }
+    </tbody>
+  </table>
+</div>
+<p class="small muted" style="margin-top:.6rem">
+  {ui.lifetime_option}: {pricing.lifetime ? ui.available : ui.not_listed}. {ui.refund}: {ui[`refund_${pricing.refund}`]}.
+  {hasPromo && ui.promo_note}
+  <a href={product.sources[pricing.source].url} rel="noopener nofollow">{ui.source}</a>
+</p>

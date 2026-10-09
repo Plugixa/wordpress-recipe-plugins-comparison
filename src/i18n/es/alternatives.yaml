@@ -1,0 +1,61 @@
+# Keyed by `target` in src/data/pages.yaml. `picks` is keyed by product slug.
+wp-recipe-maker:
+  description: Alternativas a WP Recipe Maker comparadas por precio, funciones gratuitas y migración, con la fuente de cada valor.
+  intro: WP Recipe Maker es el plugin de recetas más usado y una opción por defecto sensata. Quien busca otra cosa suele hacerlo por cómo se reparten sus funciones entre tres planes de pago, o porque necesita algo distinto de una tarjeta dentro de una entrada.
+  why:
+    - El cálculo nutricional y la conversión de unidades requieren el plan Pro, a $99 al año.
+    - Las colecciones, la planificación de menús y los envíos de visitantes requieren Elite, a $149 al año.
+    - Las raciones ajustables y el modo cocina no están en la versión gratuita.
+    - Un índice de recetas explorable requiere un plugin aparte.
+  picks:
+    recipe-card-blocks: El modo cocina es gratuito y el plan Business cubre 10 sitios por $99 al año. Importa desde WP Recipe Maker.
+    create: El cálculo nutricional automático es gratuito. Importa desde WP Recipe Maker.
+    tasty-recipes: Todos los planes de pago incluyen las mismas funciones, así que no hay niveles de funciones que comparar. Importa desde WP Recipe Maker.
+    wp-delicious: El índice de recetas, la búsqueda y los favoritos son gratuitos, y hay una licencia de por vida. No se confirmó un importador desde WP Recipe Maker.
+    plugixa-recipe: Los envíos de visitantes, las reseñas y el índice de recetas son gratuitos. Es una base de datos de recetas, no un plugin de tarjetas, y su importador de WP Recipe Maker está en Pro.
+  migrate: Recipe Card Blocks, Create y Tasty Recipes incluyen cada uno un importador gratuito para las recetas de WP Recipe Maker. Plugixa Recipe tiene uno en Pro; copia el texto, los tiempos, los ingredientes, las instrucciones y la información nutricional, pero no las imágenes ni las valoraciones. Prueba primero cualquier importador en una copia de pruebas (staging) y comprueba que las valoraciones y las imágenes se han trasladado.
+
+tasty-recipes:
+  description: Alternativas a Tasty Recipes comparadas por precio, funciones gratuitas y migración, con la fuente de cada valor.
+  intro: Tasty Recipes es una tarjeta de receta sencilla y con buen soporte. Los motivos habituales para buscar otra cosa son el precio de renovación, la información nutricional y las funciones pensadas para sitios de recetas.
+  why:
+    - Los precios publicados eran de lanzamiento y se renuevan $50 más caros.
+    - No hay calculadora nutricional integrada; Nutrifox es una suscripción aparte.
+    - No figuran envíos de visitantes, colecciones ni planificador de menús.
+    - El plazo de reembolso de 14 días es más corto que los 30 días de WP Recipe Maker.
+  picks:
+    wp-recipe-maker: Más funciones gratis, cálculo nutricional dentro del plugin a partir del plan Pro y un importador gratuito para Tasty Recipes.
+    create: Cálculo nutricional automático y reseñas gratis. Importa desde Tasty Recipes.
+    recipe-card-blocks: Modo cocina gratis y un precio más bajo para varios sitios. No tiene importador de Tasty Recipes.
+    plugixa-recipe: Un directorio de recetas con envíos y reseñas gratis. No tiene importador de Tasty Recipes, así que encaja mejor en una sección de recetas nueva que en una migración.
+  migrate: WP Recipe Maker y Create incluyen importadores gratuitos para Tasty Recipes. Recipe Card Blocks y Plugixa Recipe no, así que pasarte a cualquiera de los dos supone volver a introducir las recetas o importarlas mediante CSV.
+
+create:
+  description: Alternativas a Create (antes Create by Mediavine) comparadas por precio, funciones gratuitas y migración, con la fuente de cada valor.
+  intro: Create tiene una versión gratuita sólida y vuelve a estar en desarrollo activo desde que Mediavine lo vendió en 2025. Quien busca otra cosa lo hace por el precio de pago o por los años de poca actividad anteriores al cambio de propietario.
+  why:
+    - Create Pro cuesta $150 al año para un sitio, el precio más alto para un solo sitio de esta comparativa.
+    - Las raciones ajustables, la conversión de unidades y el modo manos libres son de pago.
+    - Su valoración en wordpress.org es más baja que la de los demás plugins de tarjetas.
+    - El cálculo nutricional y algunas otras funciones pasan por el servicio alojado del desarrollador.
+  picks:
+    wp-recipe-maker: La mayor base de instalaciones, un editor de plantillas gratuito y un importador gratuito para las recetas de Create.
+    tasty-recipes: Planes sencillos desde $49 el primer año. Importa desde Create.
+    recipe-card-blocks: Raciones, conversión de unidades y modo cocina por menos dinero, con el modo cocina gratis. No tiene importador de Create.
+    plugixa-recipe: Raciones ajustables, reseñas y envíos gratis, en una base de datos de recetas. No tiene importador de Create.
+  migrate: WP Recipe Maker y Tasty Recipes incluyen importadores gratuitos para Create. Si dependes del cálculo nutricional gratuito de Create, ten en cuenta que los demás cobran por el equivalente.
+
+zip-recipes:
+  description: Zip Recipes muestra señales de no estar mantenido. Estos son los plugins que pueden importar sus recetas, con la fuente de cada valor.
+  intro: Zip Recipes tiene una larga historia, pero el día en que lo comprobamos el sitio de su desarrollador tenía un certificado de seguridad caducado, su página de precios devolvía un error de base de datos y un aviso decía que el plugin había sido adquirido y se estaba trasladando. Su última actualización fue en junio de 2026. No empezaríamos un sitio nuevo con él, y recomendamos a los usuarios actuales que planifiquen un cambio.
+  why:
+    - El certificado de seguridad del sitio del desarrollador caducó en septiembre de 2026.
+    - La página de precios devolvía un error de base de datos cuando la comprobamos.
+    - Su última prueba se hizo con una versión de WordPress más antigua que la de cualquier otro plugin de esta comparativa.
+    - Tiene la base de instalaciones más pequeña de esta comparativa, unas 1.000.
+  picks:
+    wp-recipe-maker: El destino más seguro. Incluye un importador gratuito para Zip Recipes y tiene la mayor base de usuarios.
+    create: Importador gratuito para Zip Recipes, además de cálculo nutricional gratuito.
+    tasty-recipes: Su edición gratuita Lite importa desde Zip Recipes.
+    plugixa-recipe: Una opción si vas a rehacer el sitio como directorio de recetas. No tiene importador de Zip Recipes, así que las recetas se trasladarían por CSV en Pro.
+  migrate: WP Recipe Maker, Create y Tasty Recipes incluyen Zip Recipes entre sus orígenes de importación. Haz antes una copia de seguridad completa, ejecuta la importación en una copia de pruebas (staging) y mantén Zip Recipes instalado pero inactivo hasta que hayas comprobado los resultados.

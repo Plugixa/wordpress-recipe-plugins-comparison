@@ -1,0 +1,8 @@
+# Plugixa Recipe screenshots shown on its review page. Files are in public/plugixa/.
+items:
+  - { file: grid.webp, alt: "Recipe listing in the grid layout" }
+  - { file: recipe-page.webp, alt: "Single recipe page with times, rating, print, save and share" }
+  - { file: ingredients.webp, alt: "Grouped ingredients with the servings adjuster, and numbered steps" }
+  - { file: archives.webp, alt: "Category and cuisine archive with filters" }
+  - { file: recipe-manager.webp, alt: "Recipe Manager screen in the WordPress admin" }
+  - { file: view-editor.webp, alt: "Visual editor for a listing design" }

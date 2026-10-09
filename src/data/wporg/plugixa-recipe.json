@@ -1,0 +1,16 @@
+{
+  "slug": "plugixa-recipe",
+  "api_url": "https://api.wordpress.org/plugins/info/1.2/?action=plugin_information&request[slug]=plugixa-recipe",
+  "fetched_at": "2026-10-09",
+  "listed": true,
+  "name": "Plugixa Recipe",
+  "version": "1.0.1",
+  "active_installs": 0,
+  "rating": null,
+  "num_ratings": 0,
+  "last_updated": "2026-10-07",
+  "added": "2026-09-14",
+  "requires_wp": "6.5",
+  "requires_php": "8.0",
+  "tested_up_to": "7.1.3"
+}

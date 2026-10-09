@@ -1,0 +1,188 @@
+# Prose per plugin. `notes` and `texts` are keyed by feature id (see src/data/features.yaml).
+plugixa-recipe:
+  summary: A recipe database plugin. Recipes live in their own tables and get their own pages, listings and archives, with frontend submission, reviews and four listing layouts in the free version.
+  award: Best free option for a recipe directory
+  best_for: Sites where recipes are the content itself, such as a recipe directory, a community cookbook or a multi-author recipe section, more than food blogs that add a card under each post.
+  status: New plugin. Version 1.0.0 was released in May 2026 and it joined wordpress.org in September 2026, so it has no install base or reviews yet.
+  pros:
+    - Visitor recipe submission with moderation is in the free version; most competitors charge for it.
+    - Reviews with star ratings, optional photos and helpful votes are free.
+    - Four listing layouts (grid, masonry, slider, list) with dark mode and saved, reusable designs.
+    - Category and cuisine archives, search and filters are built in, with no extra plugin.
+    - WPML and Polylang support is declared in the free version.
+    - Pro is a single plan with a low price for unlimited sites.
+  cons:
+    - Recipe JSON-LD is in Pro. The free version outputs microdata only, while five of the six competitors here ship JSON-LD free.
+    - No recipe card inside a blog post, and so no jump-to-recipe button.
+    - No cook mode, unit conversion, step timers or ingredient links.
+    - No nutrition calculation from a food database; Pro offers an AI estimate.
+    - Imports from WP Recipe Maker only, and only in Pro.
+    - New, with no track record yet.
+  notes:
+    schema.jsonld: The free version outputs Recipe microdata. JSON-LD needs Pro.
+    schema.guided: Steps are marked as HowToStep in the Pro JSON-LD. Step groups are not marked as sections.
+    editors.gutenberg: One block that shows a recipe listing. It does not insert a single recipe card.
+    editors.classic: Through the shortcode. There is no editor button.
+    editors.elementor: One widget that shows a recipe listing.
+    editors.card_in_post: Recipes are separate pages. Posts can show a listing that links to them.
+    design.template_editor: A visual editor for listing designs (columns, colours, type, spacing). The single recipe page has one template with show and hide switches.
+    ingredients.equipment: Equipment can be stored but is not shown to readers.
+    instructions.step_media: Step images are displayed if present, but the recipe editor has no field for them.
+    nutrition.auto: An AI estimate using your own OpenAI or Gemini key. It is not a food-database calculation.
+    readers.ratings: Its own review system with moderation, optional photos and helpful votes. It does not use WordPress comments.
+    readers.jump: Not applicable, since recipes are their own pages.
+    readers.favorites: Logged-in users can save a recipe. There is no "my saved recipes" page.
+    readers.planner: Collections, meal plans and shopping lists exist for site editors in the admin and REST API. Visitors cannot build them.
+    site.multilingual: Ships a WPML config file and stores a language per recipe.
+    extras.ai: Drafts from a topic, a URL or an uploaded document, with your own OpenAI or Gemini key.
+  texts:
+    design.templates: 4 listing layouts, all free; 1 recipe page template
+    extras.importers: WP Recipe Maker, plus CSV and JSON (Pro)
+
+wp-recipe-maker:
+  summary: The most widely used recipe card plugin, with a free template editor, the longest importer list and three paid tiers that unlock nutrition, unit conversion and reader accounts.
+  award: Best overall for food blogs
+  best_for: Food bloggers at any size, from a first blog on the free version to publishers who need nutrition calculation, collections and shoppable ingredients.
+  pros:
+    - By far the largest install base on wordpress.org, with a near-perfect rating.
+    - JSON-LD, Guided Recipes markup, step media and a full template editor are free.
+    - Imports from more than 20 other recipe plugins.
+    - Frequent releases and a 30-day refund window.
+  cons:
+    - Adjustable servings, the nutrition label and cook mode need Premium.
+    - Nutrition calculation and unit conversion need Pro at $99 a year.
+    - Collections, meal planning and visitor submissions need Elite at $149 a year.
+    - A recipe index needs a separate plugin from the same developer.
+  notes:
+    ingredients.equipment: Equipment links are confirmed in Premium. Whether a plain equipment list is free was not checked.
+    nutrition.auto: Uses the Spoonacular API.
+    readers.ratings: Ratings through comments are free. Rating inside the card needs Premium.
+    site.index_search: Recipe search is free. A browsable index needs the separate WP Ultimate Post Grid plugin.
+  texts:
+    design.templates: Template Editor with unlimited custom templates (free); extra templates in Premium
+    extras.importers: 20+ plugins, including Tasty Recipes, Create, WP Delicious, Recipe Card Blocks, Cooked and Zip Recipes
+
+recipe-card-blocks:
+  summary: A block-editor recipe card from WPZOOM with free cook mode, ratings and an AI generator, and the lowest multi-site price in this comparison.
+  award: Best value for several sites
+  best_for: Bloggers who work only in the block editor and want a clean card with little setup, and anyone licensing several sites.
+  pros:
+    - Cook mode, star ratings and the nutrition block are free.
+    - Business plan covers 10 sites for $99 a year.
+    - Free Elementor widget and WPML support.
+    - Free AI recipe generator.
+  cons:
+    - Does not work with the Classic Editor.
+    - Imports from WP Recipe Maker only.
+    - Nutrition calculation needs the Professional plan or higher.
+    - No template editor found.
+  notes:
+    editors.classic: The vendor FAQ says the blocks work only with the block editor.
+    instructions.step_media: An image gallery in the directions is a Pro feature.
+    nutrition.auto: The vendor says it is based on the USDA database.
+    readers.ratings: Star and comment ratings are free. Written reviews in a rating popup need Pro.
+    site.multilingual: WPML support is listed in the free version.
+    extras.ai: Paid plans list 3 AI credits included.
+  texts:
+    design.templates: 3 card styles free; 5 to 6 in Pro
+    extras.importers: WP Recipe Maker
+
+create:
+  summary: Formerly Create by Mediavine, now independent. The free version includes automatic nutrition calculation and reviews, plus How-To and List cards.
+  award: Best free nutrition calculation
+  best_for: Bloggers who want nutrition figures calculated without paying, and sites that also publish how-to guides and round-up lists.
+  pros:
+    - Automatic nutrition calculation is free.
+    - Ratings and reviews are free.
+    - Recipe, How-To and List cards in one plugin.
+    - Imports from 11 other recipe plugins.
+    - Under active independent development since mid-2025.
+  cons:
+    - The paid plan is the most expensive single-site licence here, at $150 a year.
+    - Servings adjustment, unit conversion and the hands-free mode are paid.
+    - Lowest wordpress.org rating among the card plugins, after a slow period before the ownership change.
+    - Some features depend on the vendor's hosted service.
+  status: In mid-2025 Create was bought from Mediavine by one of its founding developers. It is no longer a Mediavine product.
+  notes:
+    design.template_editor: Custom CSS only, in the paid plan.
+    instructions.timers: Part of Interactive Mode.
+    nutrition.auto: Uses API Ninjas, relayed through the vendor's service.
+    readers.cook_mode: Interactive Mode, a hands-free view with checklists.
+    site.index_search: A List card type for round-ups. A searchable recipe index was not confirmed.
+  texts:
+    design.templates: 5 card styles free; 2 more in Pro
+    extras.importers: 11 plugins, including WP Recipe Maker, Tasty Recipes and Zip Recipes
+
+wp-delicious:
+  summary: A recipe site plugin built on a recipe post type, with a free recipe index, search, user dashboard and favourites, and the only lifetime licence in this comparison.
+  award: Best for a recipe site with a one-time payment
+  best_for: People building a whole recipe site with an index, search and user accounts, and buyers who prefer to pay once.
+  pros:
+    - Recipe index, advanced search and favourites are free.
+    - Lifetime licence available.
+    - Nine blocks, with Elementor widgets through a free companion plugin.
+    - High rating on wordpress.org.
+  cons:
+    - The vendor says the intended look depends on a compatible theme.
+    - Meal planner, AI tools and Divi modules are sold as separate add-ons.
+    - Unit conversion and automatic nutrition calculation could not be confirmed.
+    - Importers from other plugins could not be confirmed.
+  notes:
+    editors.gutenberg: Nine blocks.
+    editors.elementor: Through the free Delisho companion plugin.
+    editors.shortcode: A shortcode exists for the "Surprise Me" random recipe feature only.
+    editors.card_in_post: The Dynamic Recipe Card block.
+    readers.cook_mode: A focused reading mode. A keep-screen-awake switch was not confirmed.
+    readers.planner: The meal planner is a paid add-on. A shopping list was not confirmed.
+  texts:
+    design.templates: 3 layouts free; 8 in Pro
+
+cooked:
+  summary: One of the oldest recipe plugins, revived under a new owner. The free version includes timers, a servings switcher, a nutrition label and recipe search.
+  award: Most complete free reader tools
+  best_for: Community-style recipe sites and developers who want a shortcode-based template system.
+  pros:
+    - Timers, servings switcher, nutrition label and search are free.
+    - Full-screen cooking mode is free.
+    - Simple per-site pricing; the plugin keeps working after the licence year ends.
+    - Recently updated under new ownership.
+  cons:
+    - Lowest rating in this comparison, with many old one-star reviews about bugs and support.
+    - Ratings, favourites and visitor submissions need Pro.
+    - Block editor and Elementor support could not be confirmed.
+    - JSON-LD output could not be confirmed.
+  status: Now maintained by Gora Tech. Most of the critical reviews are three or more years old and predate the current owner.
+  notes:
+    schema.jsonld: The plugin outputs schema.org recipe data, described as microdata on wordpress.org. JSON-LD was not confirmed.
+    design.template_editor: A shortcode-based template system, not a visual editor.
+    nutrition.auto: Uses the Edamam API.
+    readers.cook_mode: A full-screen cooking view. A keep-screen-awake switch was not confirmed.
+  texts:
+    design.templates: 3 layouts, in Pro
+    extras.importers: CSV import
+
+tasty-recipes:
+  summary: A recipe card plugin from WP Tasty with a free Lite edition since 2025. Paid plans all include the same features and differ mainly in the number of sites.
+  award: Simplest paid plans
+  best_for: Bloggers who want a simple, opinionated card and plan to use the rest of the WP Tasty suite for links, pins and round-ups.
+  pros:
+    - Every paid plan includes the full feature set.
+    - JSON-LD and Guided Recipes markup are free in the Lite edition.
+    - Affiliate links on cards are free.
+    - Imports from 11 other recipe plugins.
+  cons:
+    - No built-in nutrition calculator; it relies on Nutrifox, a separate subscription.
+    - Listed prices were introductory and renew $50 higher.
+    - No visitor submissions, collections or meal planner listed.
+    - The free edition is new, so it has only a handful of ratings.
+  notes:
+    design.template_editor: A template styler for colours and options, not a structural editor.
+    ingredients.links: Links are added by hand. Automatic linking needs the separate Tasty Links plugin.
+    ingredients.equipment: Needs Tasty Links, included in the All Access plan.
+    nutrition.auto: Through Nutrifox, a separate paid service from the same company.
+    readers.ratings: Star ratings are taken from comments.
+    readers.favorites: Readers can email a recipe to themselves or save through Grow or Slickstream. There is no built-in saved list.
+    extras.ai: No AI drafting. The plugin offers a setting to block AI scrapers.
+  texts:
+    design.templates: 3 templates free; 11 on paid plans
+    extras.importers: 11 sources, including WP Recipe Maker, Create and Zip Recipes

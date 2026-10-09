@@ -1,0 +1,55 @@
+slug: plugixa-recipe
+name: Plugixa Recipe
+vendor: Plugixa
+own: true
+kind: database
+order: 1
+wporg_slug: plugixa-recipe
+homepage: https://www.plugixa.com/plugins/plugixa-recipe
+verified_at: 2026-10-09
+version_checked: "1.0.1"
+sources:
+  code: { url: "https://plugins.trac.wordpress.org/browser/plugixa-recipe/", method: source-code }
+  wporg: { url: "https://wordpress.org/plugins/plugixa-recipe/", method: docs }
+  docs: { url: "https://www.plugixa.com/documentation/plugixa-recipe", method: docs }
+  pricing: { url: "https://www.plugixa.com/plugins/plugixa-recipe#pricing", method: docs }
+pricing:
+  source: pricing
+  currency: EUR
+  free: true
+  lifetime: false
+  refund: defect_14
+  tiers:
+    - { name: Pro, price: 39, period: year, sites: "1" }
+    - { name: Pro, price: 59, period: year, sites: unlimited }
+features:
+  schema.jsonld: { value: yes, tier: paid, tier_name: Pro, src: code, note: true }
+  schema.guided: { value: partial, tier: paid, tier_name: Pro, src: code, note: true }
+  editors.gutenberg: { value: partial, tier: free, src: code, note: true }
+  editors.classic: { value: partial, tier: free, src: code, note: true }
+  editors.elementor: { value: partial, tier: free, src: code, note: true }
+  editors.shortcode: { value: yes, tier: free, src: code }
+  editors.card_in_post: { value: no, src: code, note: true }
+  editors.own_pages: { value: yes, tier: free, src: code }
+  design.templates: { text: true, src: code }
+  design.template_editor: { value: partial, tier: free, src: code, note: true }
+  ingredients.groups: { value: yes, tier: free, src: code }
+  ingredients.servings: { value: yes, tier: free, src: code }
+  ingredients.unit_conversion: { value: no, src: code }
+  ingredients.links: { value: no, src: code }
+  ingredients.equipment: { value: no, src: code, note: true }
+  instructions.step_media: { value: no, src: code, note: true }
+  instructions.timers: { value: no, src: code }
+  nutrition.label: { value: yes, tier: free, src: code }
+  nutrition.auto: { value: partial, tier: paid, tier_name: Pro, src: code, note: true }
+  readers.ratings: { value: yes, tier: free, src: code, note: true }
+  readers.print: { value: yes, tier: free, src: code }
+  readers.jump: { value: no, src: code, note: true }
+  readers.cook_mode: { value: no, src: code }
+  readers.favorites: { value: partial, tier: free, src: code, note: true }
+  readers.planner: { value: no, src: code, note: true }
+  site.index_search: { value: yes, tier: free, src: code }
+  site.submissions: { value: yes, tier: free, src: code }
+  site.multilingual: { value: yes, tier: free, src: code, note: true }
+  extras.importers: { text: true, src: code }
+  extras.ai: { value: yes, tier: paid, tier_name: Pro, src: code, note: true }

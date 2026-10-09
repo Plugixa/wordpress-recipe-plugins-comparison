@@ -1,0 +1,16 @@
+{
+  "slug": "wp-recipe-maker",
+  "api_url": "https://api.wordpress.org/plugins/info/1.2/?action=plugin_information&request[slug]=wp-recipe-maker",
+  "fetched_at": "2026-10-09",
+  "listed": true,
+  "name": "WP Recipe Maker",
+  "version": "10.8.5",
+  "active_installs": 50000,
+  "rating": 4.96,
+  "num_ratings": 355,
+  "last_updated": "2026-09-21",
+  "added": "2016-09-07",
+  "requires_wp": "4.4",
+  "requires_php": "7.2",
+  "tested_up_to": "7.1.3"
+}

@@ -1,0 +1,188 @@
+# Texte par plugin. `notes` et `texts` sont indexés par identifiant de fonctionnalité (voir src/data/features.yaml).
+plugixa-recipe:
+  summary: "Un plugin de base de données de recettes. Les recettes sont stockées dans leurs propres tables et disposent de leurs propres pages, listes et archives, avec soumission depuis le site, avis et quatre mises en page de liste dans la version gratuite."
+  award: Meilleure option gratuite pour un annuaire de recettes
+  best_for: "Les sites dont les recettes constituent le contenu même, comme un annuaire de recettes, un livre de cuisine communautaire ou une rubrique recettes à plusieurs auteurs, plus que les blogs culinaires qui ajoutent une fiche sous chaque article."
+  status: "Plugin récent. La version 1.0.0 est sortie en mai 2026 et il a rejoint wordpress.org en septembre 2026 : il n'a donc encore ni base d'installations ni avis."
+  pros:
+    - "La soumission de recettes par les visiteurs, avec modération, est dans la version gratuite ; la plupart des concurrents la font payer."
+    - "Les avis avec notes par étoiles, photos facultatives et votes « utile » sont gratuits."
+    - "Quatre mises en page de liste (grille, mosaïque, slider, liste) avec mode sombre et designs enregistrés et réutilisables."
+    - "Les archives par catégorie et par cuisine, la recherche et les filtres sont intégrés, sans plugin supplémentaire."
+    - La compatibilité WPML et Polylang est déclarée dans la version gratuite.
+    - "Pro est une formule unique, à prix bas, pour un nombre illimité de sites."
+  cons:
+    - "Le JSON-LD de recette est réservé à Pro. La version gratuite ne génère que des microdonnées, alors que cinq des six concurrents présentés ici fournissent le JSON-LD gratuitement."
+    - "Pas de fiche recette dans un article de blog, et donc pas de bouton « Aller à la recette »."
+    - "Pas de mode cuisine, de conversion d'unités, de minuteurs d'étapes ni de liens sur les ingrédients."
+    - "Pas de calcul nutritionnel à partir d'une base de données alimentaire ; Pro propose une estimation par IA."
+    - "Import depuis WP Recipe Maker uniquement, et seulement dans Pro."
+    - "Récent, sans recul pour l'instant."
+  notes:
+    schema.jsonld: "La version gratuite génère des microdonnées Recipe. Le JSON-LD nécessite Pro."
+    schema.guided: "Les étapes sont balisées en HowToStep dans le JSON-LD de Pro. Les groupes d'étapes ne sont pas balisés comme des sections."
+    editors.gutenberg: "Un bloc qui affiche une liste de recettes. Il n'insère pas une fiche recette individuelle."
+    editors.classic: "Via le shortcode. Il n'y a pas de bouton dans l'éditeur."
+    editors.elementor: Un widget qui affiche une liste de recettes.
+    editors.card_in_post: "Les recettes sont des pages distinctes. Les articles peuvent afficher une liste qui y renvoie."
+    design.template_editor: "Un éditeur visuel pour les designs de liste (colonnes, couleurs, typographie, espacements). La page de recette individuelle a un seul modèle, avec des interrupteurs pour afficher ou masquer les éléments."
+    ingredients.equipment: "Le matériel peut être enregistré mais n'est pas affiché aux lecteurs."
+    instructions.step_media: "Les images d'étapes sont affichées si elles existent, mais l'éditeur de recette n'a pas de champ pour les ajouter."
+    nutrition.auto: "Une estimation par IA avec votre propre clé OpenAI ou Gemini. Ce n'est pas un calcul à partir d'une base de données alimentaire."
+    readers.ratings: "Son propre système d'avis avec modération, photos facultatives et votes « utile ». Il n'utilise pas les commentaires WordPress."
+    readers.jump: "Sans objet, puisque les recettes ont leurs propres pages."
+    readers.favorites: "Les utilisateurs connectés peuvent enregistrer une recette. Il n'y a pas de page « mes recettes enregistrées »."
+    readers.planner: "Les collections, les menus et les listes de courses existent pour les éditeurs du site, dans l'administration et la REST API. Les visiteurs ne peuvent pas en créer."
+    site.multilingual: Fournit un fichier de configuration WPML et enregistre une langue par recette.
+    extras.ai: "Brouillons à partir d'un sujet, d'une URL ou d'un document téléversé, avec votre propre clé OpenAI ou Gemini."
+  texts:
+    design.templates: "4 mises en page de liste, toutes gratuites ; 1 modèle de page de recette"
+    extras.importers: "WP Recipe Maker, plus CSV et JSON (Pro)"
+
+wp-recipe-maker:
+  summary: "Le plugin de fiche recette le plus utilisé, avec un éditeur de modèles gratuit, la plus longue liste d'outils d'import et trois formules payantes qui débloquent la nutrition, la conversion d'unités et les comptes lecteurs."
+  award: Meilleur choix global pour les blogs culinaires
+  best_for: "Les blogueurs culinaires de toute taille, du premier blog sur la version gratuite aux éditeurs qui ont besoin du calcul nutritionnel, des collections et des ingrédients achetables en ligne."
+  pros:
+    - "De loin la plus grande base d'installations sur wordpress.org, avec une note presque parfaite."
+    - "Le JSON-LD, le balisage Guided Recipes, les médias d'étapes et un éditeur de modèles complet sont gratuits."
+    - Importe depuis plus de 20 autres plugins de recettes.
+    - Des versions fréquentes et un délai de remboursement de 30 jours.
+  cons:
+    - "Les portions ajustables, l'étiquette nutritionnelle et le mode cuisine nécessitent Premium."
+    - "Le calcul nutritionnel et la conversion d'unités nécessitent Pro, à $99 par an."
+    - "Les collections, la planification de repas et les soumissions des visiteurs nécessitent Elite, à $149 par an."
+    - Un index de recettes nécessite un plugin distinct du même développeur.
+  notes:
+    ingredients.equipment: "Les liens sur le matériel sont confirmés dans Premium. Nous n'avons pas vérifié si une simple liste du matériel est gratuite."
+    nutrition.auto: "Utilise l'API Spoonacular."
+    readers.ratings: "Les notes via les commentaires sont gratuites. La notation dans la fiche nécessite Premium."
+    site.index_search: "La recherche de recettes est gratuite. Un index à parcourir nécessite le plugin distinct WP Ultimate Post Grid."
+  texts:
+    design.templates: "Template Editor avec modèles personnalisés illimités (gratuit) ; modèles supplémentaires dans Premium"
+    extras.importers: "Plus de 20 plugins, dont Tasty Recipes, Create, WP Delicious, Recipe Card Blocks, Cooked et Zip Recipes"
+
+recipe-card-blocks:
+  summary: "Une fiche recette pour l'éditeur de blocs, signée WPZOOM, avec mode cuisine, notes et générateur IA gratuits, et le prix multisite le plus bas de ce comparatif."
+  award: Meilleur rapport qualité-prix pour plusieurs sites
+  best_for: "Les blogueurs qui travaillent uniquement dans l'éditeur de blocs et veulent une fiche sobre avec peu de réglages, et toute personne qui a besoin d'une licence pour plusieurs sites."
+  pros:
+    - "Le mode cuisine, les notes par étoiles et le bloc nutrition sont gratuits."
+    - "La formule Business couvre 10 sites pour $99 par an."
+    - Widget Elementor gratuit et compatibilité WPML.
+    - Générateur de recettes par IA gratuit.
+  cons:
+    - "Ne fonctionne pas avec l'éditeur classique."
+    - Importe depuis WP Recipe Maker uniquement.
+    - Le calcul nutritionnel nécessite la formule Professional ou supérieure.
+    - "Aucun éditeur de modèles trouvé."
+  notes:
+    editors.classic: "La FAQ de l'éditeur indique que les blocs ne fonctionnent qu'avec l'éditeur de blocs."
+    instructions.step_media: Une galerie d'images dans les instructions est une fonctionnalité Pro.
+    nutrition.auto: "L'éditeur indique qu'il s'appuie sur la base de données de l'USDA."
+    readers.ratings: "Les notes par étoiles et par commentaire sont gratuites. Les avis rédigés dans une fenêtre de notation nécessitent Pro."
+    site.multilingual: La compatibilité WPML est indiquée dans la version gratuite.
+    extras.ai: Les formules payantes indiquent 3 crédits IA inclus.
+  texts:
+    design.templates: "3 styles de fiche gratuits ; 5 à 6 dans Pro"
+    extras.importers: WP Recipe Maker
+
+create:
+  summary: "Anciennement Create by Mediavine, désormais indépendant. La version gratuite comprend le calcul nutritionnel automatique et les avis, ainsi que des fiches tutoriel (How-To) et liste (List)."
+  award: Meilleur calcul nutritionnel gratuit
+  best_for: "Les blogueurs qui veulent des valeurs nutritionnelles calculées sans payer, et les sites qui publient aussi des tutoriels et des listes de sélection."
+  pros:
+    - Le calcul nutritionnel automatique est gratuit.
+    - Les notes et les avis sont gratuits.
+    - "Fiches recette, tutoriel (How-To) et liste (List) dans un seul plugin."
+    - Importe depuis 11 autres plugins de recettes.
+    - En développement actif et indépendant depuis la mi-2025.
+  cons:
+    - "La formule payante est la licence monosite la plus chère ici, à $150 par an."
+    - "L'ajustement des portions, la conversion d'unités et le mode mains libres sont payants."
+    - "La note wordpress.org la plus basse parmi les plugins de fiche recette, après une période creuse avant le changement de propriétaire."
+    - "Certaines fonctionnalités dépendent du service hébergé par l'éditeur."
+  status: "À la mi-2025, Create a été racheté à Mediavine par l'un de ses développeurs fondateurs. Ce n'est plus un produit Mediavine."
+  notes:
+    design.template_editor: "CSS personnalisé uniquement, dans la formule payante."
+    instructions.timers: Fait partie de Interactive Mode.
+    nutrition.auto: "Utilise API Ninjas, relayé par le service de l'éditeur."
+    readers.cook_mode: "Interactive Mode, une vue mains libres avec des listes à cocher."
+    site.index_search: "Un type de fiche List pour les sélections. Un index de recettes avec recherche n'a pas été confirmé."
+  texts:
+    design.templates: "5 styles de fiche gratuits ; 2 de plus dans Pro"
+    extras.importers: "11 plugins, dont WP Recipe Maker, Tasty Recipes et Zip Recipes"
+
+wp-delicious:
+  summary: "Un plugin de site de recettes fondé sur un type de contenu recette, avec index des recettes, recherche, tableau de bord utilisateur et favoris gratuits, et la seule licence à vie de ce comparatif."
+  award: Meilleur choix pour un site de recettes avec paiement unique
+  best_for: "Les personnes qui créent un site de recettes complet avec index, recherche et comptes utilisateurs, et les acheteurs qui préfèrent payer une seule fois."
+  pros:
+    - "L'index des recettes, la recherche avancée et les favoris sont gratuits."
+    - Licence à vie disponible.
+    - "Neuf blocs, et des widgets Elementor via un plugin compagnon gratuit."
+    - Note élevée sur wordpress.org.
+  cons:
+    - "L'éditeur indique que le rendu prévu dépend d'un thème compatible."
+    - "Le planificateur de repas, les outils d'IA et les modules Divi sont vendus comme add-ons distincts."
+    - "La conversion d'unités et le calcul nutritionnel automatique n'ont pas pu être confirmés."
+    - "Les outils d'import depuis d'autres plugins n'ont pas pu être confirmés."
+  notes:
+    editors.gutenberg: Neuf blocs.
+    editors.elementor: Via Delisho, le plugin compagnon gratuit.
+    editors.shortcode: "Un shortcode existe uniquement pour la fonctionnalité de recette aléatoire « Surprise Me »."
+    editors.card_in_post: Le bloc Dynamic Recipe Card.
+    readers.cook_mode: "Un mode de lecture sans distraction. Un interrupteur empêchant la mise en veille de l'écran n'a pas été confirmé."
+    readers.planner: "Le planificateur de repas est un add-on payant. Une liste de courses n'a pas été confirmée."
+  texts:
+    design.templates: "3 mises en page gratuites ; 8 dans Pro"
+
+cooked:
+  summary: "L'un des plus anciens plugins de recettes, relancé par un nouveau propriétaire. La version gratuite comprend des minuteurs, un sélecteur de portions, une étiquette nutritionnelle et la recherche de recettes."
+  award: Outils pour les lecteurs les plus complets en version gratuite
+  best_for: "Les sites de recettes de type communautaire et les développeurs qui veulent un système de modèles à base de shortcodes."
+  pros:
+    - "Les minuteurs, le sélecteur de portions, l'étiquette nutritionnelle et la recherche sont gratuits."
+    - Le mode cuisine en plein écran est gratuit.
+    - "Une tarification simple, par site ; le plugin continue de fonctionner après la fin de l'année de licence."
+    - Mis à jour récemment sous son nouveau propriétaire.
+  cons:
+    - "La note la plus basse de ce comparatif, avec de nombreux anciens avis à une étoile sur des bugs et le support."
+    - "Les notes, les favoris et les soumissions des visiteurs nécessitent Pro."
+    - "La prise en charge de l'éditeur de blocs et d'Elementor n'a pas pu être confirmée."
+    - "La génération de JSON-LD n'a pas pu être confirmée."
+  status: "Désormais maintenu par Gora Tech. La plupart des avis critiques ont trois ans ou plus et sont antérieurs au propriétaire actuel."
+  notes:
+    schema.jsonld: "Le plugin génère des données de recette schema.org, décrites comme des microdonnées sur wordpress.org. Le JSON-LD n'a pas été confirmé."
+    design.template_editor: "Un système de modèles à base de shortcodes, pas un éditeur visuel."
+    nutrition.auto: "Utilise l'API Edamam."
+    readers.cook_mode: "Une vue de cuisine en plein écran. Un interrupteur empêchant la mise en veille de l'écran n'a pas été confirmé."
+  texts:
+    design.templates: "3 mises en page, dans Pro"
+    extras.importers: Import CSV
+
+tasty-recipes:
+  summary: "Un plugin de fiche recette signé WP Tasty, avec une édition Lite gratuite depuis 2025. Les formules payantes comprennent toutes les mêmes fonctionnalités et diffèrent surtout par le nombre de sites."
+  award: Formules payantes les plus simples
+  best_for: "Les blogueurs qui veulent une fiche simple, aux choix assumés, et prévoient d'utiliser le reste de la suite WP Tasty pour les liens, les épingles et les sélections."
+  pros:
+    - "Chaque formule payante comprend l'ensemble des fonctionnalités."
+    - "Le JSON-LD et le balisage Guided Recipes sont gratuits dans l'édition Lite."
+    - Les liens affiliés sur les fiches sont gratuits.
+    - Importe depuis 11 autres plugins de recettes.
+  cons:
+    - "Pas de calculateur nutritionnel intégré ; il s'appuie sur Nutrifox, un abonnement distinct."
+    - "Les prix affichés étaient des prix de lancement et le renouvellement coûte $50 de plus."
+    - "Aucune soumission par les visiteurs, collection ni planificateur de repas n'est indiqué."
+    - "L'édition gratuite est récente, elle ne compte donc qu'une poignée de notes."
+  notes:
+    design.template_editor: "Un outil de style pour les couleurs et les options des modèles, pas un éditeur de structure."
+    ingredients.links: "Les liens sont ajoutés à la main. La création automatique de liens nécessite le plugin distinct Tasty Links."
+    ingredients.equipment: "Nécessite Tasty Links, inclus dans la formule All Access."
+    nutrition.auto: "Via Nutrifox, un service payant distinct de la même société."
+    readers.ratings: Les notes par étoiles proviennent des commentaires.
+    readers.favorites: "Les lecteurs peuvent s'envoyer une recette par e-mail ou l'enregistrer via Grow ou Slickstream. Il n'y a pas de liste d'enregistrements intégrée."
+    extras.ai: "Pas de rédaction par IA. Le plugin propose un réglage pour bloquer les robots d'aspiration des IA."
+  texts:
+    design.templates: "3 modèles gratuits ; 11 dans les formules payantes"
+    extras.importers: "11 sources, dont WP Recipe Maker, Create et Zip Recipes"

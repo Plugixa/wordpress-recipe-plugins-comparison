@@ -1,0 +1,55 @@
+slug: cooked
+name: Cooked
+vendor: Gora Tech
+own: false
+kind: database
+order: 6
+wporg_slug: cooked
+homepage: https://cooked.pro/
+verified_at: 2026-10-09
+version_checked: "1.16.2"
+sources:
+  wporg: { url: "https://wordpress.org/plugins/cooked/", method: docs }
+  site: { url: "https://cooked.pro/", method: docs }
+  pricing: { url: "https://cooked.pro/get-cooked/", method: docs }
+pricing:
+  source: pricing
+  currency: USD
+  free: true
+  lifetime: false
+  refund: unknown
+  tiers:
+    - { name: Single Site, price: 49, period: year, sites: "1" }
+    - { name: Three Site, price: 99, period: year, sites: "3" }
+    - { name: Five Site, price: 149, period: year, sites: "5" }
+features:
+  schema.jsonld: { value: partial, tier: free, src: wporg, note: true }
+  schema.guided: { value: unverified }
+  editors.gutenberg: { value: unverified }
+  editors.classic: { value: unverified }
+  editors.elementor: { value: unverified }
+  editors.shortcode: { value: yes, tier: free, src: wporg }
+  editors.card_in_post: { value: unverified }
+  editors.own_pages: { value: unverified }
+  design.templates: { text: true, src: site }
+  design.template_editor: { value: partial, tier: free, src: wporg, note: true }
+  ingredients.groups: { value: yes, tier: free, src: wporg }
+  ingredients.servings: { value: yes, tier: free, src: wporg }
+  ingredients.unit_conversion: { value: unverified }
+  ingredients.links: { value: unverified }
+  ingredients.equipment: { value: unverified }
+  instructions.step_media: { value: unverified }
+  instructions.timers: { value: yes, tier: free, src: wporg }
+  nutrition.label: { value: yes, tier: free, src: wporg }
+  nutrition.auto: { value: yes, tier: paid, tier_name: Pro, src: site, note: true }
+  readers.ratings: { value: yes, tier: paid, tier_name: Pro, src: site }
+  readers.print: { value: yes, tier: free, src: wporg }
+  readers.jump: { value: unverified }
+  readers.cook_mode: { value: partial, tier: free, src: wporg, note: true }
+  readers.favorites: { value: yes, tier: paid, tier_name: Pro, src: site }
+  readers.planner: { value: unverified }
+  site.index_search: { value: yes, tier: free, src: wporg }
+  site.submissions: { value: yes, tier: paid, tier_name: Pro, src: site }
+  site.multilingual: { value: unverified }
+  extras.importers: { text: true, src: wporg }
+  extras.ai: { value: unverified }

@@ -1,0 +1,7 @@
+items:
+  - { file: grid.webp, alt: "Liste de recettes en disposition grille" }
+  - { file: recipe-page.webp, alt: "Page de recette avec temps, note, impression, enregistrement et partage" }
+  - { file: ingredients.webp, alt: "Ingrédients groupés avec réglage des portions, et étapes numérotées" }
+  - { file: archives.webp, alt: "Archive par catégorie et cuisine avec filtres" }
+  - { file: recipe-manager.webp, alt: "Écran du gestionnaire de recettes dans l'administration WordPress" }
+  - { file: view-editor.webp, alt: "Éditeur visuel d'un design de liste" }

@@ -1,0 +1,93 @@
+# Keyed by guide slug in src/data/pages.yaml. `picks` is keyed by product slug.
+best-wordpress-recipe-plugins:
+  title: "Migliori plugin ricette WordPress ({year}): 7 a confronto con fonti"
+  nav: Migliori plugin ricette in assoluto
+  description: "I sette plugin ricette WordPress ancora mantenuti, in classifica per ciò che ciascuno fa meglio, con prezzi, numeri di wordpress.org e fonti."
+  h1: Migliori plugin ricette WordPress
+  intro:
+    - "Oggi su wordpress.org i plugin ricette mantenuti attivamente sono sette. Si dividono in due gruppi. I plugin per schede aggiungono una scheda ricetta a un articolo del blog. I plugin per siti di ricette danno a ogni ricetta una pagina propria e ci costruiscono attorno un indice."
+    - "La classifica qui sotto parte dalle esigenze di un tipico blog di cucina, poi passa ai casi in cui un altro plugin è più adatto."
+  picks:
+    wp-recipe-maker: "La scelta predefinita per un blog di cucina. Ha la base di utenti più ampia, la valutazione migliore e una versione gratuita con JSON-LD, markup Guided Recipes e un editor dei template. Metti in conto $99 all'anno quando ti serviranno il calcolo dei valori nutrizionali o la conversione delle unità di misura."
+    recipe-card-blocks: "Una scheda pulita per l'editor a blocchi, con la modalità cucina gratuita. Il piano da 10 siti a $99 all'anno è il miglior prezzo multisito di questo confronto. Non supporta l'editor classico."
+    create: "La migliore versione gratuita per i valori nutrizionali, perché il calcolo è gratuito. Copre anche le schede how-to e le liste. Il piano a pagamento è caro, a $150 all'anno."
+    wp-delicious: "La scelta per costruire un intero sito di ricette, con indice, ricerca e preferiti gratuiti e una licenza a vita. Il produttore dichiara che il design previsto dipende da un tema compatibile."
+    plugixa-recipe: "Il nostro plugin. È un database di ricette con ricette inviate dai visitatori, recensioni e layout per gli elenchi gratuiti. È in questa posizione, e non più in alto, perché il JSON-LD è in Pro, non ha una scheda per gli articoli del blog ed è nuovo."
+    tasty-recipes: "Una scheda semplice con le stesse funzioni in ogni piano a pagamento. Non ha un calcolatore nutrizionale integrato e i prezzi aumentano al rinnovo."
+    cooked: "Un set completo di funzioni gratuite per i lettori, timer compresi. La sua valutazione è la più bassa di questo confronto per via di vecchie recensioni su bug e assistenza, quindi controlla prima i riscontri recenti."
+  how:
+    - "Abbiamo basato la classifica su quattro aspetti verificabili: che cosa include la versione gratuita, quanto costano per sito i livelli a pagamento, con quanta regolarità il plugin viene mantenuto e che cosa ne dicono gli utenti su wordpress.org."
+    - "Non abbiamo eseguito test di velocità e non abbiamo provato a mano ogni funzione. I valori provengono dalle pagine dei singoli produttori; la pagina sulla metodologia spiega i limiti di questo approccio."
+
+best-free-recipe-plugins:
+  title: "Migliori plugin ricette WordPress gratis ({year})"
+  nav: Migliori plugin ricette gratis
+  description: "Che cosa include senza pagare ogni plugin ricette WordPress gratuito, dallo schema ai valori nutrizionali fino agli invii, con le fonti."
+  h1: Migliori plugin ricette WordPress gratis
+  intro:
+    - "Tutti i plugin di questo confronto hanno una versione gratuita, ma ciascuno tiene per sé cose diverse. Uno offre gratis il calcolo dei valori nutrizionali e fa pagare le porzioni regolabili. Un altro fa il contrario."
+    - "Il plugin gratuito giusto dipende da quale funzione a pagamento ti è più difficile farne a meno."
+  picks:
+    create: "Calcolo automatico dei valori nutrizionali gratuito, recensioni gratuite e JSON-LD per ricette, how-to e liste. Le porzioni regolabili e la conversione delle unità di misura sono a pagamento."
+    wp-recipe-maker: "JSON-LD, markup Guided Recipes, editor dei template, foto dei passaggi e importatori gratuiti. Le porzioni regolabili e l'etichetta nutrizionale sono a pagamento."
+    plugixa-recipe: "Ricette inviate dai visitatori, recensioni con foto, porzioni regolabili, etichetta nutrizionale e quattro layout per gli elenchi gratuiti. Il JSON-LD è a pagamento, e questo conta se la tua priorità è l'aspetto nei risultati di ricerca."
+    recipe-card-blocks: "Modalità cucina, valutazioni a stelle, blocco dei valori nutrizionali e generatore di ricette con l'IA gratuiti. Le porzioni regolabili sono a pagamento e manca il supporto all'editor classico."
+    cooked: "Timer, selettore delle porzioni, etichetta nutrizionale, vista di cottura a schermo intero e ricerca delle ricette gratuiti. Valutazioni e preferiti sono a pagamento."
+    wp-delicious: "Indice delle ricette, ricerca avanzata, preferiti e nove blocchi gratuiti. Le ricette inviate dai visitatori sono a pagamento."
+  how:
+    - "Una funzione conta come gratuita solo se la pagina del produttore la indica nella versione gratuita. Dove non siamo riusciti a confermare il livello, la tabella dice \"Non verificato\"."
+    - "Se ti interessa soprattutto come le ricette compaiono su Google, tieni presente che il JSON-LD è gratuito in tutti i plugin presenti qui tranne Plugixa Recipe, e che per Cooked non è stato confermato."
+
+recipe-directory-plugins:
+  title: "Migliori plugin WordPress per una directory di ricette ({year})"
+  nav: Migliori per una directory di ricette
+  description: "Plugin WordPress per creare una directory di ricette con indice, ricerca, ricette inviate dai visitatori e recensioni, a confronto con le fonti."
+  h1: Migliori plugin per una directory di ricette
+  intro:
+    - "Una directory di ricette è un sito in cui le ricette sono il contenuto. I visitatori sfogliano per categoria o per cucina, cercano, salvano e spesso inviano le proprie ricette. È un lavoro diverso dall'aggiungere una scheda ricetta sotto un articolo del blog."
+    - "Qui contano soprattutto quattro cose. Le ricette devono avere pagine proprie, al sito serve un indice con filtri, ai visitatori serve un modo per inviare ricette e ai lettori servono account o ricette salvate."
+  picks:
+    plugixa-recipe: "Il nostro plugin, e l'uso per cui è stato creato. Pagine ricetta, archivi per categoria e per cucina, ricerca, recensioni e ricette inviate dai visitatori con moderazione sono tutti gratuiti. I punti deboli: il JSON-LD è in Pro, le ricette salvate non hanno una pagina di elenco e il plugin è nuovo."
+    wp-delicious: "La scelta collaudata. Pagine ricetta, indice, ricerca avanzata e una bacheca utente con i preferiti sono gratuiti, e il JSON-LD è incluso. Per le ricette inviate dai visitatori serve Pro, a $59 all'anno."
+    cooked: "Ricerca ed elenchi di ricette sono gratuiti; profili, preferiti, valutazioni e invii sono in Pro, a $49. Leggi prima le recensioni recenti."
+    wp-recipe-maker: "Può farlo con il livello Elite, che aggiunge invii, collezioni e pianificazione dei pasti per $149 all'anno. Resta un plugin per schede, quindi le ricette stanno dentro gli articoli."
+  how:
+    - "Abbiamo guardato quali delle quattro esigenze soddisfa ciascun plugin, e a quale prezzo."
+    - "Se la funzione decisiva sono le ricette inviate dai visitatori, solo Plugixa Recipe le include gratis. Se la funzione decisiva è uno storico alle spalle, WP Delicious è la scelta più solida."
+
+recipe-plugins-with-nutrition-calculator:
+  title: "Plugin ricette WordPress con calcolatore nutrizionale ({year})"
+  nav: Migliori con calcolo dei valori nutrizionali
+  description: "Quali plugin ricette WordPress calcolano i valori nutrizionali in automatico, quale fonte di dati usa ciascuno e quanto costa."
+  h1: Plugin ricette con calcolatore nutrizionale
+  intro:
+    - "Un calcolatore nutrizionale legge l'elenco degli ingredienti e compila calorie, grassi, proteine e tutto il resto a partire da un database di alimenti. Senza, devi inserire ogni valore a mano."
+    - "Qui lo offrono cinque plugin, a prezzi molto diversi. Qualunque tu scelga, controlla il risultato su qualche ricetta; i calcolatori possono associare un ingrediente all'alimento sbagliato."
+  picks:
+    create: "L'unico calcolatore gratuito di questo confronto. Usa API Ninjas tramite il servizio del produttore."
+    cooked: "In Pro a $49 per un sito, con il database Edamam."
+    recipe-card-blocks: "Nel piano Professional a $79 all'anno per tre siti. Il produttore dichiara che si basa sui dati USDA."
+    wp-recipe-maker: "Nel livello Pro a $99 all'anno, con l'API di Spoonacular. Supporta anche nutrienti personalizzati e calcolati."
+    tasty-recipes: "Nessun calcolatore integrato. Si collega a Nutrifox, un servizio a pagamento separato della stessa azienda."
+    plugixa-recipe: "Nessun calcolatore basato su un database di alimenti. Pro può chiedere a un modello di IA di stimare i valori, cosa meno affidabile di una ricerca in un database. L'etichetta nutrizionale manuale è gratuita."
+  how:
+    - "Riportiamo il livello e la fonte di dati dichiarati da ciascun produttore. Non abbiamo confrontato la precisione dei calcolatori."
+    - "L'etichetta nutrizionale manuale, in cui i valori li scrivi tu, è gratuita in Create, Recipe Card Blocks, Cooked, WP Delicious e Plugixa Recipe."
+
+recipe-plugins-for-elementor:
+  title: "Migliori plugin ricette WordPress per Elementor ({year})"
+  nav: Migliori per Elementor
+  description: "Plugin ricette WordPress con un widget Elementor dedicato: che cosa fa il widget e se è gratuito."
+  h1: Migliori plugin ricette per Elementor
+  intro:
+    - "Qualsiasi plugin ricette con uno shortcode si può inserire nel widget shortcode di Elementor. Un widget dedicato è meglio, perché scegli la ricetta e le sue opzioni dal pannello di Elementor e vedi il risultato mentre modifichi."
+    - "Qui cinque plugin hanno una propria integrazione con Elementor."
+  picks:
+    wp-recipe-maker: "Un widget Elementor gratuito per inserire una scheda ricetta, oltre al blocco e al supporto all'editor classico."
+    recipe-card-blocks: "Un widget Recipe Card gratuito per Elementor, con gli stessi stili di scheda del blocco."
+    tasty-recipes: "L'edizione gratuita Lite indica il supporto a Elementor per aggiungere una scheda ricetta."
+    plugixa-recipe: "Un widget gratuito che mostra un elenco di ricette, con controlli per layout, categorie, cucine, ordinamento e modalità scura. Non inserisce una singola scheda ricetta."
+    wp-delicious: "Più di 35 widget Elementor tramite Delisho, un plugin complementare gratuito dello stesso produttore."
+  how:
+    - "Un plugin compare in elenco solo se il suo produttore dichiara il supporto a Elementor nelle proprie pagine."
+    - "Non è stato possibile confermare il supporto a Elementor per Create e Cooked, che quindi restano fuori."

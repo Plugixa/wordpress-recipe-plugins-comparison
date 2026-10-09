@@ -1,0 +1,34 @@
+sections:
+  - id: who
+    h: Quién mantiene este sitio
+    p:
+      - Esta comparativa la mantiene Plugixa, la empresa que desarrolla Plugixa Recipe, uno de los plugins comparados. Eso es un conflicto de intereses, y esta página explica qué hacemos al respecto.
+      - Todas las páginas llevan un aviso que indica quién mantiene el sitio. Nuestro plugin está señalado en las tablas. Aparece en primer lugar en una clasificación solo donde los datos comprobados lo respaldan, y su página recoge sus puntos débiles igual que la de cualquier otro plugin.
+  - id: sources
+    h: De dónde salen los valores
+    p:
+      - En los plugins de la competencia, cada valor procede del material del propio desarrollador, es decir, su ficha en wordpress.org, sus páginas de funciones y su página de precios. Cada valor verificado de una tabla enlaza a la página de la que se tomó.
+      - "En Plugixa Recipe, los valores proceden de la lectura del código fuente del plugin. Hemos aplicado las mismas definiciones, y por eso varias funciones están marcadas como «No» o «Parcial» aunque el plugin guarde datos relacionados."
+      - El número de instalaciones, las valoraciones, los números de versión y las fechas de actualización los lee un script de la API pública de plugins de wordpress.org; no se escriben a mano.
+  - id: labels
+    h: Qué significan las etiquetas
+    p:
+      - "«Sí» significa que el plugin hace lo que dice la definición de la función. «Parcial» significa que hace una parte, y una nota indica qué falta. «No» significa que no lo hace. «Sin verificar» significa que no hemos podido confirmar el valor en las páginas del propio desarrollador, así que no afirmamos nada."
+      - "«Gratis» significa que la función está en la versión de wordpress.org. «De pago» indica el plan más bajo que la incluye, según lo que declara el desarrollador."
+      - "«Sin verificar» no es un «No» educado. Es probable que muchas de esas funciones existan. Preferimos dejar un hueco antes que suponer."
+  - id: limits
+    h: Lo que no hemos hecho
+    p:
+      - No hemos instalado y probado a mano todos los plugins, ni hemos hecho pruebas de velocidad. Los valores reflejan lo que los desarrolladores dicen de sus propios productos.
+      - No hay una puntuación global ni una valoración con estrellas nuestra. Las valoraciones que se muestran son las públicas de wordpress.org, con el número de valoraciones al lado.
+      - Los precios son los que se mostraban el día en que los comprobamos. Cuando un desarrollador mostraba un precio promocional, indicamos también el precio normal.
+  - id: rankings
+    h: Cómo se deciden las clasificaciones y las recomendaciones
+    p:
+      - Las páginas de los mejores plugins clasifican los plugins para una necesidad concreta y declarada. Cada recomendación tiene un motivo que se puede contrastar con la tabla de funciones.
+      - Miramos qué incluye la versión gratuita, el precio por sitio, cuándo se actualizó el plugin por última vez, y su valoración pública y su número de instalaciones.
+  - id: corrections
+    h: Correcciones
+    p:
+      - Si un valor es incorrecto o está desactualizado, abre una incidencia en el repositorio de GitHub con un enlace a la página del desarrollador que muestre el valor correcto. Los desarrolladores pueden hacerlo con sus propios plugins.
+      - Los datos y los textos se publican bajo CC BY 4.0, así que puedes reutilizarlos citando la autoría.

@@ -1,0 +1,35 @@
+---
+import { content, fmt, href, type Locale } from "../lib/i18n";
+import type { Product } from "../lib/data";
+import { fromPrice, installsLabel, ratingLabel } from "../lib/cells";
+import { paths } from "../lib/pages";
+
+interface Props {
+  locale: Locale;
+  product: Product;
+  /** Replaces the summary, e.g. the reason for a pick. */
+  text?: string;
+  heading?: "h2" | "h3";
+}
+
+const { locale, product, text, heading: Heading = "h3" } = Astro.props;
+const ui = content(locale, "ui");
+const prose = content(locale, "products")[product.slug];
+const url = href(locale, paths.plugin(product.slug));
+---
+
+<div class:list={["card", { own: product.own }]}>
+  <span class="eyebrow">{prose.award}</span>
+  <Heading><a href={url}>{product.name}</a></Heading>
+  <div class="meta-row">
+    <span class="badge">{ui.kind[product.kind]}</span>
+    {product.own && <span class="badge own">{ui.table.ours}</span>}
+  </div>
+  <p>{text ?? prose.summary}</p>
+  <p class="small muted">
+    {[installsLabel(locale, product) && `${ui.stats.installs}: ${installsLabel(locale, product)}`, ratingLabel(locale, product), fromPrice(locale, product)]
+      .filter(Boolean)
+      .join(" · ")}
+  </p>
+  <a class="more" href={url}>{fmt(ui.plugin.h1, { name: product.name })} →</a>
+</div>
